@@ -1,0 +1,61 @@
+# User arrow to complete history
+bind '"[A":history-search-backward'
+bind '"[B":history-search-forward'
+
+# use TAB to complete
+bind 'TAB:menu-complete'
+
+# print manual
+pman () {
+  man -t "${1}" | open -f -a /Applications/Preview.app
+}
+
+export PATH=/Users/jxu/cl/jxu:/Users/jxu/src/play-2.2.2:/Users/jxu/src/apache-maven-3.2.1/bin:$PATH
+
+# jave version
+export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+
+# AppleScripts
+alias sharing="osascript ~/Documents/AppleScripts/RemoteLogin.scpt"
+alias keyboard="osascript ~/Documents/AppleScripts/KeyboardDisableMissionControl.scpt"
+
+# alias
+alias st="open -a SourceTree"
+alias kdiff3="/Applications/kdiff3.app/Contents/MacOS/kdiff3"
+alias fixcam="sudo killall VDCAssistant"
+alias fixmc="osascript -e 'quit application \"Dock\"'"
+
+# fix SSH sock file name for tmux
+if [ "$OS" = "linux" ] ; then
+  if [ $IS_REMOTE = 'true' ] ; then
+    if [ "x$SSH_AUTH_SOCK" != "x/tmp/$USER-ssh-auth-sock" ]; then
+      ln -snf $SSH_AUTH_SOCK /tmp/$USER-ssh-auth-sock
+      SSH_AUTH_SOCK=/tmp/$USER-ssh-auth-sock
+      export SSH_AUTH_SOCK
+    fi
+  fi
+fi
+
+################################################################################
+# set Hadoop environment
+# Hadoop 2
+#export HADOOP_PREFIX="/Users/jxu/src/opensource/hadoop/hadoop-2.5.0"
+#export HADOOP_HOME=$HADOOP_PREFIX
+#export HADOOP_COMMON_HOME=$HADOOP_PREFIX
+#export HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
+#export HADOOP_HDFS_HOME=$HADOOP_PREFIX
+#export HADOOP_MAPRED_HOME=$HADOOP_PREFIX
+#export HADOOP_YARN_HOME=$HADOOP_PREFIX
+# Hadoop 1
+#export HADOOP_PREFIX="/Users/jxu/src/opensource/hadoop/hadoop-1.2.1"
+export HADOOP_PREFIX="/Users/jxu/src/opensource/hadoop/hadoop-2.0.0-cdh4.7.1"
+export HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop-mapreduce1
+export PATH=$PATH:$HADOOP_PREFIX/bin-mapreduce1
+
+export PATH=/box/www/devtools-checkout/bin:$PATH
+
+# added by Anaconda 2.1.0 installer
+export PATH="/Users/jxu/anaconda/bin:$PATH"
+
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin

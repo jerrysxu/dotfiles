@@ -1,0 +1,14 @@
+ack.plugin.bash
+base.plugin.bash
+dirs.plugin.bash
+git-prompt.plugin.bash
+git.plugin.bash
+history.plugin.bash
+java.plugin.bash
+osx.plugin.bash
+python.plugin.bash
+ssh.plugin.bash
+tmux.plugin.bash
+tmuxinator.plugin.bash
+todo
+todo.plugin.bash

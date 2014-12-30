@@ -1,0 +1,7 @@
+.DS_Store
+.svn
+*.sw?
+.netrwhist
+*.iml
+.idea
+*/saf/bin/sed 
