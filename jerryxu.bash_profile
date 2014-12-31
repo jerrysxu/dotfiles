@@ -58,7 +58,7 @@ function maccls {
 
 # Input -----------------------------------------------------------------------
 # use TAB to complete
-bind 'TAB:menu-complete'
+#bind 'TAB:menu-complete'
 
 bind "set completion-ignore-case on" # note: bind used instead of sticking these in .inputrc
 bind "set show-all-if-ambiguous On" # show list automatically, without double tab
