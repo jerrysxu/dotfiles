@@ -159,7 +159,7 @@ function forApp(name, f) {
 }
 
 function fixedSize() {
-  forApp(e, function(win) {
+  forApp(w, function(win) {
     win.toGrid(0.25, 0.5, 0.5, 0.5);
   })
 
