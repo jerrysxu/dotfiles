@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+link (){
+  if [ -e $1 ]; then
+    if [ -e $2 ]; then
+      rm $2
+    fi
+
+    ln -s $1 $2
+  fi
+}
+
+# bash
+link ~/tools/dotfiles/bash_profile ~/.bash_profile
+
+# git
+link ~/tools/dotfiles/gitignore ~/.gitignore
+
+# misc
+link ~/tools/dotfiles/tmux.conf ~/.tmux.conf
+link ~/tools/dotfiles/phoenix.js ~/.phoenix.js
