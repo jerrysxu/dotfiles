@@ -19,3 +19,4 @@ link ~/tools/dotfiles/gitignore ~/.gitignore
 # misc
 link ~/tools/dotfiles/tmux.conf ~/.tmux.conf
 link ~/tools/dotfiles/phoenix.js ~/.phoenix.js
+link ~/tools/dotfiles/jekyllconfig ~/.jekyllconfig

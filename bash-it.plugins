@@ -12,3 +12,4 @@ tmux.plugin.bash
 tmuxinator.plugin.bash
 todo
 todo.plugin.bash
+jekyll.plugin.bash
