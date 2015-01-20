@@ -41,20 +41,22 @@ if [ "$OS" = "linux" ] ; then
 fi
 
 # Alias -----------------------------------------------------------------------
-# AppleScripts
-alias fixshr="osascript ~/tools/dotfiles/applescripts/RemoteLogin.scpt"
-alias fixkb="osascript ~/tools/dotfiles/applescripts/KeyboardDisableMissionControl.scpt"
+if [ "$OS" = "darwin" ] ; then
+  # AppleScripts
+  alias fixshr="osascript ~/tools/dotfiles/applescripts/RemoteLogin.scpt"
+  alias fixkb="osascript ~/tools/dotfiles/applescripts/KeyboardDisableMissionControl.scpt"
 
-alias st="open -a SourceTree"
-alias kd="/Applications/kdiff3.app/Contents/MacOS/kdiff3"
-alias fixcam="sudo killall VDCAssistant"
-alias fixmc="osascript -e 'quit application \"Dock\"'"
+  alias st="open -a SourceTree"
+  alias kd="/Applications/kdiff3.app/Contents/MacOS/kdiff3"
+  alias fixcam="sudo killall VDCAssistant"
+  alias fixmc="osascript -e 'quit application \"Dock\"'"
+
+  function maccls { 
+    osascript -e 'tell application "System Events" to keystroke "k" using command down' 
+  }
+fi
 
 alias lr="ls -ltra"
-
-function maccls { 
-  osascript -e 'tell application "System Events" to keystroke "k" using command down' 
-}
 
 # Input -----------------------------------------------------------------------
 # use Shift-TAB to complete
@@ -68,29 +70,10 @@ bind "set show-all-if-ambiguous On" # show list automatically, without double ta
 bind "set bell-style none" # no bell
 
 ###############################################################################
-export PATH=~/src/play-2.2.2:~/src/apache-maven-3.2.1/bin:$PATH
-
 # jave version
 if [ "$OS" = "darwin" ] ; then
-  export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+  export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 fi
-
-# set Hadoop environment
-# Hadoop 2
-#export HADOOP_PREFIX="/Users/jxu/src/opensource/hadoop/hadoop-2.5.0"
-#export HADOOP_HOME=$HADOOP_PREFIX
-#export HADOOP_COMMON_HOME=$HADOOP_PREFIX
-#export HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
-#export HADOOP_HDFS_HOME=$HADOOP_PREFIX
-#export HADOOP_MAPRED_HOME=$HADOOP_PREFIX
-#export HADOOP_YARN_HOME=$HADOOP_PREFIX
-# Hadoop 1
-#export HADOOP_PREFIX="/Users/jxu/src/opensource/hadoop/hadoop-1.2.1"
-export HADOOP_PREFIX="/Users/jxu/src/opensource/hadoop/hadoop-2.0.0-cdh4.7.1"
-export HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop-mapreduce1
-export PATH=$PATH:$HADOOP_PREFIX/bin-mapreduce1
-
-export PATH=/box/www/devtools-checkout/bin:$PATH
 
 if [ -d ~/bin ]; then
   export PATH=~/bin:$PATH  # add your bin folder to the path, if you have it.  It's a good place to add all your scripts

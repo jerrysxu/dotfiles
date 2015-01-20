@@ -102,7 +102,7 @@ var j = 'IntelliJ IDEA';
 var c = 'Google Chrome';
 var f = 'Firefox';
 var s = 'Sublime Text 2';
-var r = 'RStudio';
+var r = 'PhpStorm';
 var m = 'Mail';
 var k = 'Skype';
 var l = 'Calendar';
@@ -111,11 +111,11 @@ var o = 'NeteaseMusic';
 var u = 'Microsoft Outlook';
 var g = 'SourceTree';
 var x = 'Xcode';
-var y = 'Mou';
+var y = 'PyCharm';
 var n = 'Preview';
 var a = 'Activity Monitor';
 var p = 'Finder';
-var e = 'Adium';
+var e = 'HipChat';
 var h = 'Messages';
 var i = 'iTunes';
 var w = 'Wunderlist';
@@ -208,7 +208,7 @@ bind( '2', mCmd, function() {
     });
   });
 
- var mainScreens = new Array(c, f, s, m, l, v, o, u, g, y, p, i);
+ var mainScreens = new Array(c, f, s, m, l, v, o, u, g, p, i);
 
   _(mainScreens).each(function(title) {
     forApp(title, function(win) {
@@ -216,7 +216,7 @@ bind( '2', mCmd, function() {
     });
   });
 
-  var fullScreens = new Array(j, t, r, x);
+  var fullScreens = new Array(j, t, r, x, y);
 
   _(fullScreens).each(function(title) {
     forApp(title, function(win) {
