@@ -118,7 +118,7 @@ var p = 'Finder';
 var e = 'HipChat';
 var h = 'Messages';
 var i = 'iTunes';
-var w = 'Wunderlist';
+var w = 'Things';
 var b = 'Safari'
 
 // App bindings d q
@@ -208,7 +208,7 @@ bind( '2', mCmd, function() {
     });
   });
 
- var mainScreens = new Array(c, f, s, m, l, v, o, u, g, p, i);
+ var mainScreens = new Array(c, f, s, m, l, v, o, u, g, p, i, y, r);
 
   _(mainScreens).each(function(title) {
     forApp(title, function(win) {
@@ -216,7 +216,7 @@ bind( '2', mCmd, function() {
     });
   });
 
-  var fullScreens = new Array(j, t, r, x, y);
+  var fullScreens = new Array(j, t, x);
 
   _(fullScreens).each(function(title) {
     forApp(title, function(win) {
