@@ -4,6 +4,7 @@ alias tl='tail -f /var/log/lyft/*.log'
 alias glg='cd /var/log/lyft'
 alias gsv='cd /srv/service/current'
 alias gut='cd /srv/service/current/tests/unit'
+alias ve="source ./venv/bin/activate"
 
 # Input -----------------------------------------------------------------------
 # use Shift-TAB to complete
@@ -53,9 +54,17 @@ export HISTIGNORE="ls:cd:[bf]g:exit:..:...:ll:lla"
 alias h=history
 
 # Prompts ---------------------------------------------------------------------
+virtualenv_prompt() {
+  if [ ! -z "$VIRTUAL_ENV" ]
+  then
+    local env=$(dirname $VIRTUAL_ENV)
+    echo " [${env##*/}]"
+  fi
+}
+
 prompt_func() {
   previous_return_value=$?;
-  prompt="\[${COLOR_GREEN}\][${SERVICE_NAME}] \[${COLOR_PURPLE}\]\w\[${COLOR_NC}\] "
+  prompt="\[${COLOR_GREEN}\][${SERVICE_NAME}] \[${COLOR_PURPLE}\]\w\[${COLOR_BLUE}\]$(virtualenv_prompt)\[${COLOR_NC}\] "
 
   if test $previous_return_value -eq 0
   then

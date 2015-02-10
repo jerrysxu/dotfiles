@@ -97,54 +97,64 @@ bind('right', mShort, rightOneMonitor);
 // Bindings for specific apps
 // ############################################################################
 
-var t = 'Terminal';
-var j = 'IntelliJ IDEA';
+// unassigned: h z
+// new comamnds: d n q
+var a = 'Activity Monitor';
+var b = 'Safari'
 var c = 'Google Chrome';
+var d = 'python'
+var e = 'HipChat';
 var f = 'Firefox';
-var s = 'Sublime Text 2';
-var r = 'PhpStorm';
-var m = 'Mail';
+var g = 'SourceTree';
+var i = 'iTunes';
+var j = 'IntelliJ IDEA';
 var k = 'Skype';
 var l = 'Calendar';
-var v = 'Evernote';
+var m = 'Mail';
+var n = 'Navicat for PostgreSQL';
 var o = 'NeteaseMusic';
+var p = 'Finder';
+var q = 'PhpStorm';
+var r = 'RStudio';
+var s = 'Sublime Text 2';
+var t = 'Terminal';
 var u = 'Microsoft Outlook';
-var g = 'SourceTree';
+var v = 'Evernote';
+var w = 'Things';
 var x = 'Xcode';
 var y = 'PyCharm';
-var n = 'Preview';
-var a = 'Activity Monitor';
-var p = 'Finder';
-var e = 'HipChat';
-var h = 'Messages';
-var i = 'iTunes';
-var w = 'Things';
-var b = 'Safari'
 
-// App bindings d q
-bind('t', mCmd, function() { App.focusOrStart(t); });
-bind('j', mCmd, function() { App.focusOrStart(j); });
+var la = 'Messages';
+var lb = 'Preview';
+var lc = 'Mou';
+var ld = '1Password'
+var le = 'Android Studio'
+var lf = 'iBooks'
+
+bind('a', mCmd, function() { App.focusOrStart(a); });
+bind('b', mCmd, function() { App.focusOrStart(b); });
 bind('c', mCmd, function() { App.focusOrStart(c); });
+bind('d', mCmd, function() { App.focusOrStart(d); });
+bind('e', mCmd, function() { App.focusOrStart(e); });
 bind('f', mCmd, function() { App.focusOrStart(f); });
-bind('s', mCmd, function() { App.focusOrStart(s); });
-bind('r', mCmd, function() { App.focusOrStart(r); });
-bind('m', mCmd, function() { App.focusOrStart(m); });
+bind('g', mCmd, function() { App.focusOrStart(g); });
+bind('i', mCmd, function() { App.focusOrStart(i); });
+bind('j', mCmd, function() { App.focusOrStart(j); });
 bind('k', mCmd, function() { App.focusOrStart(k); });
 bind('l', mCmd, function() { App.focusOrStart(l); });
-bind('v', mCmd, function() { App.focusOrStart(v); });
+bind('m', mCmd, function() { App.focusOrStart(m); });
+bind('n', mCmd, function() { App.focusOrStart(n); });
 bind('o', mCmd, function() { App.focusOrStart(o); });
+bind('p', mCmd, function() { App.focusOrStart(p); });
+bind('q', mCmd, function() { App.focusOrStart(q); });
+bind('r', mCmd, function() { App.focusOrStart(r); });
+bind('s', mCmd, function() { App.focusOrStart(s); });
+bind('t', mCmd, function() { App.focusOrStart(t); });
 bind('u', mCmd, function() { App.focusOrStart(u); });
-bind('g', mCmd, function() { App.focusOrStart(g); });
+bind('v', mCmd, function() { App.focusOrStart(v); });
+bind('w', mCmd, function() { App.focusOrStart(w); });
 bind('x', mCmd, function() { App.focusOrStart(x); });
 bind('y', mCmd, function() { App.focusOrStart(y); });
-bind('n', mCmd, function() { App.focusOrStart(n); });
-bind('a', mCmd, function() { App.focusOrStart(a); });
-bind('p', mCmd, function() { App.focusOrStart(p); });
-bind('e', mCmd, function() { App.focusOrStart(e); });
-bind('h', mCmd, function() { App.focusOrStart(h); });
-bind('i', mCmd, function() { App.focusOrStart(i); });
-bind('w', mCmd, function() { App.focusOrStart(w); });
-bind('b', mCmd, function() { App.focusOrStart(b); });
 
 // ############################################################################
 // Layouts
@@ -163,7 +173,7 @@ function fixedSize() {
     win.toGrid(0.25, 0.5, 0.5, 0.5);
   })
 
-  forApp(h, function(win) {
+  forApp(la, function(win) {
     win.toLocation(300, 0, 460, 950);
   })
 
@@ -180,7 +190,7 @@ function fixedSize() {
 bind( '1', mCmd, function() {
   fixedSize()
 
-  var readScreens = new Array(a, n);
+  var readScreens = new Array(a, lb, ld, lf);
 
   _(readScreens).each(function(title) {
     forApp(title, function(win) {
@@ -188,7 +198,7 @@ bind( '1', mCmd, function() {
     });
   });
 
-  var fullScreens = new Array(j, t, r, x, c, f, s, m, l, v, o, u, g, y, p, i);
+  var fullScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, p, q, r, s, t, u, v, x, y, lc, le);
 
   _(fullScreens).each(function(title) {
     forApp(title, function(win) {
@@ -200,7 +210,7 @@ bind( '1', mCmd, function() {
 bind( '2', mCmd, function() {
   fixedSize()
 
-  var readScreens = new Array(a, n);
+  var readScreens = new Array(a, lb, ld, lf);
 
   _(readScreens).each(function(title) {
     forApp(title, function(win) {
@@ -208,7 +218,7 @@ bind( '2', mCmd, function() {
     });
   });
 
- var mainScreens = new Array(c, f, s, m, l, v, o, u, g, p, i, y, r);
+ var mainScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, p, q, r, s, u, v, x, y, lc, le);
 
   _(mainScreens).each(function(title) {
     forApp(title, function(win) {
@@ -216,7 +226,7 @@ bind( '2', mCmd, function() {
     });
   });
 
-  var fullScreens = new Array(j, t, x);
+  var fullScreens = new Array(t);
 
   _(fullScreens).each(function(title) {
     forApp(title, function(win) {

@@ -70,29 +70,49 @@ bind "set show-all-if-ambiguous On" # show list automatically, without double ta
 bind "set bell-style none" # no bell
 
 ###############################################################################
-# java version
 if [ "$OS" = "darwin" ] ; then
+  # java version
   export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+  if [ -d ~/bin ]; then
+    export PATH=~/bin:$PATH  # add your bin folder to the path, if you have it.  It's a good place to add all your scripts
+  fi
+
+  # DevBox
+  function svb {
+    for s in local api lyftqueue pricing ats eta tripestimator fare; do ./service $1 $s; done
+  }
+  alias sve="./service enter"
+  alias svo="./service open"
+  alias svr="./service restart"
+  alias svs="./service start"
+  alias svu="./service status | highlight green '.*running.*'"
+  alias ve="source ./venv/bin/activate"
+
+  # Android Studio
+  export ANDROID_HOME=/Users/jerryxu/Library/Android/sdk
+  export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
+
+  # RVM
+  export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+  # Production Redshift ("Lyfthouse")
+  alias ppl='ssh gateway.ln'
+  alias lh='psql -q -h localhost -p 3439 -U lyftdata lyfthouseprod'
+  alias lhm='psql -h localhost -p 3439 -U lyftmaster lyfthouseprod'
+
+  # lyftdata
+  export LYFTDATA_HOME=~/src/lyft/lyftdata
+  export PYTHONPATH=$PYTHONPATH:$LYFTDATA_HOME/lib
+  export PATH=$PATH:$LYFTDATA_HOME/bin
+
+  # For better psql paging
+  export PAGER=less
+  export LESS="-iMSx4 -FX"
+
+  # added by Anaconda 2.1.0 installer
+  function ana {
+    export PATH="/Users/jerryxu/anaconda/bin:$PATH"
+  }
 fi
 
-if [ -d ~/bin ]; then
-  export PATH=~/bin:$PATH  # add your bin folder to the path, if you have it.  It's a good place to add all your scripts
-fi
-
-# DevBox
-function svb {
-  for s in local api lyftqueue pricing ats eta tripestimator fare; do ./service $1 $s; done
-}
-alias sve="./service enter"
-alias svo="./service open"
-alias svr="./service restart"
-alias svs="./service start"
-alias svu="./service status | highlight green '.*running.*'"
-alias ve="source ./venv/bin/activate"
-
-# Android Studio
-export ANDROID_HOME=/Users/jerryxu/Library/Android/sdk
-export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
-
-# RVM
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
