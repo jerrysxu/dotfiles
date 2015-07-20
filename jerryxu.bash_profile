@@ -106,13 +106,26 @@ if [ "$OS" = "darwin" ] ; then
   export PYTHONPATH=$PYTHONPATH:$LYFTDATA_HOME/lib
   export PATH=$PATH:$LYFTDATA_HOME/bin
 
+  # maven
+  export PATH=/Users/jerryxu/src/apache-maven-3.2.5/bin:$PATH
+
   # For better psql paging
   export PAGER=less
-  export LESS="-iMSx4 -FX"
+  # export LESS="-iMSx4 -FX"
+
+  ### Added by the Heroku Toolbelt
+  export PATH="/usr/local/heroku/bin:$PATH"
 
   # added by Anaconda 2.1.0 installer
   function ana {
     export PATH="/Users/jerryxu/anaconda/bin:$PATH"
   }
+
+  export DOCKER_IP=`cat ~/.docker-ip`
+  alias dockr='docker -H tcp://$DOCKER_IP:4243'
+
+  alias dockrmongo='dockr run -d -v /data/vmwaredocker/mongodb:/data -p 27017:27017 -p 28017:28017 dockerfile/mongodb'
+  # alias dockrmysql='dockr run --name dockermysql -d mysql -e MYSQL_ROOT_PASSWORD=sa -v /data/vmwaredocker/mysql:/var/lib/mysql -p 0.0.0.0:3306:3306'
+  alias dockrmysql='dockr run -d -e MYSQL_ROOT_PASSWORD=sa -p 0.0.0.0:3306:3306 mysql'
 fi
 

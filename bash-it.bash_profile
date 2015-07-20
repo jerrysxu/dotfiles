@@ -14,8 +14,10 @@ export BASH_IT=$HOME/tools/bash-it
 export BASH_IT_THEME='ir-black'
 
 # Set my editor and git editor
-export EDITOR="/usr/bin/vim"
-export GIT_EDITOR='/usr/bin/vim'
+# export EDITOR="/usr/bin/vim"
+# export GIT_EDITOR='/usr/bin/vim'
+export EDITOR="subl -w"
+export GIT_EDITOR='subl -w'
 
 # Don't check mail when opening terminal.
 unset MAILCHECK

@@ -103,7 +103,7 @@ var a = 'Activity Monitor';
 var b = 'Safari'
 var c = 'Google Chrome';
 var d = 'python'
-var e = 'HipChat';
+var e = 'Slack';
 var f = 'Firefox';
 var g = 'SourceTree';
 var i = 'iTunes';
@@ -126,10 +126,11 @@ var y = 'PyCharm';
 
 var la = 'Messages';
 var lb = 'Preview';
-var lc = 'Mou';
+var lc = 'MacDown';
 var ld = '1Password'
 var le = 'Android Studio'
 var lf = 'iBooks'
+var lg = 'Dash'
 
 bind('a', mCmd, function() { App.focusOrStart(a); });
 bind('b', mCmd, function() { App.focusOrStart(b); });
@@ -198,7 +199,7 @@ bind( '1', mCmd, function() {
     });
   });
 
-  var fullScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, p, q, r, s, t, u, v, x, y, lc, le);
+  var fullScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, p, q, r, s, t, u, v, x, y, lc, le, lg);
 
   _(fullScreens).each(function(title) {
     forApp(title, function(win) {
@@ -218,7 +219,7 @@ bind( '2', mCmd, function() {
     });
   });
 
- var mainScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, p, q, r, s, u, v, x, y, lc, le);
+ var mainScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, p, q, r, s, u, v, x, y, lc, le, lg);
 
   _(mainScreens).each(function(title) {
     forApp(title, function(win) {

@@ -4,3 +4,5 @@
 .netrwhist
 *.iml
 .idea
+
+*venv
