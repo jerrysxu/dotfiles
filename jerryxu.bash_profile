@@ -45,6 +45,7 @@ if [ "$OS" = "darwin" ] ; then
   # AppleScripts
   alias fixshr="osascript ~/tools/dotfiles/applescripts/RemoteLogin.scpt"
   alias fixkb="osascript ~/tools/dotfiles/applescripts/KeyboardDisableMissionControl.scpt"
+  alias opfs="osascript ~/tools/dotfiles/applescripts/MonitorFoscamUploads.scpt"
 
   alias st="open -a SourceTree"
   alias kd="/Applications/kdiff3.app/Contents/MacOS/kdiff3"
@@ -103,11 +104,14 @@ if [ "$OS" = "darwin" ] ; then
 
   # lyftdata
   export LYFTDATA_HOME=~/src/lyft/lyftdata
-  export PYTHONPATH=$PYTHONPATH:$LYFTDATA_HOME/lib
+  export PYTHONPATH=$LYFTDATA_HOME/lib
   export PATH=$PATH:$LYFTDATA_HOME/bin
 
   # maven
-  export PATH=/Users/jerryxu/src/apache-maven-3.2.5/bin:$PATH
+  export PATH=/Users/jerryxu/src/apache-maven/bin:$PATH
+
+  # appcatalyst
+  export PATH=/opt/vmware/appcatalyst/bin:$PATH
 
   # For better psql paging
   export PAGER=less
@@ -127,5 +131,11 @@ if [ "$OS" = "darwin" ] ; then
   alias dockrmongo='dockr run -d -v /data/vmwaredocker/mongodb:/data -p 27017:27017 -p 28017:28017 dockerfile/mongodb'
   # alias dockrmysql='dockr run --name dockermysql -d mysql -e MYSQL_ROOT_PASSWORD=sa -v /data/vmwaredocker/mysql:/var/lib/mysql -p 0.0.0.0:3306:3306'
   alias dockrmysql='dockr run -d -e MYSQL_ROOT_PASSWORD=sa -p 0.0.0.0:3306:3306 mysql'
-fi
 
+  # spark
+  export SPARK_HOME=/Users/jerryxu/src/opensource/spark
+  export PYTHONPATH=$PYTHONPATH:$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.8.2.1-src.zip
+
+  # VMWare appcatalyst
+  alias startvm="nohup /opt/vmware/appcatalyst/bin/appcatalyst-daemon >/dev/null 2>&1 &"
+fi

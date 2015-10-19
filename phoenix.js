@@ -127,10 +127,11 @@ var y = 'PyCharm';
 var la = 'Messages';
 var lb = 'Preview';
 var lc = 'MacDown';
-var ld = '1Password'
-var le = 'Android Studio'
-var lf = 'iBooks'
-var lg = 'Dash'
+var ld = '1Password';
+var le = 'Android Studio';
+var lf = 'iBooks';
+var lg = 'Dash';
+var lh = 'Xcode';
 
 bind('a', mCmd, function() { App.focusOrStart(a); });
 bind('b', mCmd, function() { App.focusOrStart(b); });
@@ -199,7 +200,7 @@ bind( '1', mCmd, function() {
     });
   });
 
-  var fullScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, p, q, r, s, t, u, v, x, y, lc, le, lg);
+  var fullScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, p, q, r, s, t, u, v, x, y, lc, le, lg, lh);
 
   _(fullScreens).each(function(title) {
     forApp(title, function(win) {
@@ -219,7 +220,7 @@ bind( '2', mCmd, function() {
     });
   });
 
- var mainScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, p, q, r, s, u, v, x, y, lc, le, lg);
+ var mainScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, p, q, r, s, u, v, x, y, lc, le, lg, lh);
 
   _(mainScreens).each(function(title) {
     forApp(title, function(win) {
