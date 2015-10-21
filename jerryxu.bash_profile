@@ -73,7 +73,7 @@ bind "set bell-style none" # no bell
 ###############################################################################
 if [ "$OS" = "darwin" ] ; then
   # java version
-  export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+  export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 
   if [ -d ~/bin ]; then
     export PATH=~/bin:$PATH  # add your bin folder to the path, if you have it.  It's a good place to add all your scripts
