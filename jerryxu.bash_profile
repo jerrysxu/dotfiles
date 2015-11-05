@@ -46,6 +46,7 @@ if [ "$OS" = "darwin" ] ; then
   alias fixshr="osascript ~/tools/dotfiles/applescripts/RemoteLogin.scpt"
   alias fixkb="osascript ~/tools/dotfiles/applescripts/KeyboardDisableMissionControl.scpt"
   alias opfs="osascript ~/tools/dotfiles/applescripts/MonitorFoscamUploads.scpt"
+  alias lcs="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
   alias st="open -a SourceTree"
   alias kd="/Applications/kdiff3.app/Contents/MacOS/kdiff3"
