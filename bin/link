@@ -20,3 +20,21 @@ link ~/tools/dotfiles/gitignore ~/.gitignore
 link ~/tools/dotfiles/tmux.conf ~/.tmux.conf
 link ~/tools/dotfiles/phoenix.js ~/.phoenix.js
 link ~/tools/dotfiles/jekyllconfig ~/.jekyllconfig
+
+mkdir ~/tools/bash-it/aliases/enabled
+for i in $(cat ~/tools/dotfiles/bash-it.aliases)
+do
+  ln -s ~/tools/bash-it/aliases/available/$i  ~/tools/bash-it/aliases/enabled/$i
+done
+
+mkdir ~/tools/bash-it/completion/enabled
+for i in $(cat ~/tools/dotfiles/bash-it.aliases)
+do
+  ln -s ~/tools/bash-it/completion/available/$i  ~/tools/bash-it/completion/enabled/$i
+done
+
+mkdir ~/tools/bash-it/plugins/enabled
+for i in $(cat ~/tools/dotfiles/bash-it.aliases)
+do
+  ln -s ~/tools/bash-it/plugins/available/$i  ~/tools/bash-it/plugins/enabled/$i
+done

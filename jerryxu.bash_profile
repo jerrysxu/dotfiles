@@ -19,7 +19,7 @@ else
 fi
 
 if [ -d /usr/local/bin ]; then
-	export PATH=/usr/local/bin:$PATH 
+	export PATH=/usr/local/bin:$PATH
 fi
 
 # Remote ----------------------------------------------------------------------
@@ -53,8 +53,8 @@ if [ "$OS" = "darwin" ] ; then
   alias fixcam="sudo killall VDCAssistant"
   alias fixmc="osascript -e 'quit application \"Dock\"'"
 
-  function maccls { 
-    osascript -e 'tell application "System Events" to keystroke "k" using command down' 
+  function maccls {
+    osascript -e 'tell application "System Events" to keystroke "k" using command down'
   }
 fi
 
@@ -80,15 +80,6 @@ if [ "$OS" = "darwin" ] ; then
     export PATH=~/bin:$PATH  # add your bin folder to the path, if you have it.  It's a good place to add all your scripts
   fi
 
-  # DevBox
-  function svb {
-    for s in local api lyftqueue pricing ats eta tripestimator fare; do ./service $1 $s; done
-  }
-  alias sve="./service enter"
-  alias svo="./service open"
-  alias svr="./service restart"
-  alias svs="./service start"
-  alias svu="./service status | highlight green '.*running.*'"
   alias ve="source ./venv/bin/activate"
 
   # Android Studio
@@ -97,16 +88,6 @@ if [ "$OS" = "darwin" ] ; then
 
   # RVM
   export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-  # Production Redshift ("Lyfthouse")
-  alias ppl='ssh gateway.ln'
-  alias lh='psql -q -h localhost -p 3439 -U lyftdata lyfthouseprod'
-  alias lhm='psql -h localhost -p 3439 -U lyftmaster lyfthouseprod'
-
-  # lyftdata
-  export LYFTDATA_HOME=~/src/lyft/lyftdata
-  export PYTHONPATH=$LYFTDATA_HOME/lib
-  export PATH=$PATH:$LYFTDATA_HOME/bin
 
   # maven
   export PATH=/Users/jerryxu/src/apache-maven/bin:$PATH
