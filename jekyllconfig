@@ -18,4 +18,4 @@ MARKUPS=markdown
 
 # If you want to use a different editor for Jekyll, change the value of this variable
 
-JEKYLL_EDITOR=subl
+JEKYLL_EDITOR=atom

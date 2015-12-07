@@ -59,7 +59,7 @@ bind( 'down', mCmd, function() {
 bind( 'right', mCmd, cycleCalls(
   toGrid,
   [
-    [0.5, 0, 0.5, 1], 
+    [0.5, 0, 0.5, 1],
     [0.25, 0, 1, 1]
   ]
 ));
@@ -132,6 +132,7 @@ var le = 'Android Studio';
 var lf = 'iBooks';
 var lg = 'Dash';
 var lh = 'Xcode';
+var li = 'Amazon Music'
 
 bind('a', mCmd, function() { App.focusOrStart(a); });
 bind('b', mCmd, function() { App.focusOrStart(b); });
@@ -175,24 +176,23 @@ function fixedSize() {
     win.toGrid(0.25, 0.5, 0.5, 0.5);
   })
 
-  forApp(la, function(win) {
-    win.toLocation(300, 0, 460, 950);
-  })
+  //forApp(la, function(win) {
+  //  win.toLocation(300, 0, 460, 950);
+  //})
 
-  forApp(k, function(win) {
-    win.toLocation(30, 0, 580, 850);
-  })
+  //forApp(k, function(win) {
+  //  win.toLocation(30, 0, 580, 850);
+  //})
 
-  forApp(e, function(win) {
-    //win.toLocation(150, 0, 1024, 900);
-    win.toGrid(0, 0, 0.5, 1);
-  })
+  //forApp(e, function(win) {
+  //  win.toGrid(0, 0, 0.5, 1);
+  //})
 }
 
 bind( '1', mCmd, function() {
   fixedSize()
 
-  var readScreens = new Array(a, lb, ld, lf);
+  var readScreens = new Array(a, k, la);
 
   _(readScreens).each(function(title) {
     forApp(title, function(win) {
@@ -200,7 +200,14 @@ bind( '1', mCmd, function() {
     });
   });
 
-  var fullScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, p, q, r, s, t, u, v, x, y, lc, le, lg, lh);
+  var mainScreens = new Array(e, lb, ld, lf);
+  _(mainScreens).each(function(title) {
+    forApp(title, function(win) {
+      win.toGrid( 0, 0, 0.75, 1 )
+    });
+  });
+
+  var fullScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, p, q, r, s, t, u, v, x, y, lc, le, lg, lh, li);
 
   _(fullScreens).each(function(title) {
     forApp(title, function(win) {
@@ -212,7 +219,7 @@ bind( '1', mCmd, function() {
 bind( '2', mCmd, function() {
   fixedSize()
 
-  var readScreens = new Array(a, lb, ld, lf);
+  var readScreens = new Array(a, k, la, lb, lf);
 
   _(readScreens).each(function(title) {
     forApp(title, function(win) {
@@ -220,7 +227,7 @@ bind( '2', mCmd, function() {
     });
   });
 
- var mainScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, p, q, r, s, u, v, x, y, lc, le, lg, lh);
+ var mainScreens = new Array(b, c, d, e, f, g, i, j, l, m, n, o, p, q, r, s, u, v, x, y, lc, ld, le, lg, lh, li);
 
   _(mainScreens).each(function(title) {
     forApp(title, function(win) {
