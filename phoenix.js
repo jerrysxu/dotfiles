@@ -2,41 +2,38 @@
 // a super-lightweight OS X window manager that can be configured and
 // scripted through Javascript.
 
-var mCmd = ['cmd', 'shift', 'ctrl'],
-  mShort = ['cmd', 'ctrl'],
-  nudgePixels = 10,
-  padding = 0,
-  previousSizes = {};
+var mCmd = ['cmd', 'shift', 'ctrl'];
+var mShort = ['cmd', 'ctrl'];
+var nudgePixels = 10;
+var padding = 0;
+var previousSizes = {};
 
-// Remembers hotkey bindings.
-var keys = [];
-function bind(key, mods, callback) {
-  keys.push(api.bind(key, mods, callback));
+// ############################################################################
+// Debug
+// ############################################################################
+
+const isDebug = true;
+
+function debug(message) {
+  if (!isDebug) return;
+  if (typeof message == 'string') Phoenix.log(message);
+  else Phoenix.log(JSON.stringify(message));
 }
-
-// ############################################################################
-// Modal activation
-// ############################################################################
-
-// Modal activator
-// This hotkey enables/disables all other hotkeys.
-var active = false;
-api.bind('`', mShort, function() {
-  if (!active) {
-    enableKeys();
-  } else {
-    disableKeys();
-  }
-});
 
 // ############################################################################
 // Bindings
 // ############################################################################
 
+// Remembers hotkey bindings.
+var keys = [];
+function bind(key, mods, callback) {
+  keys.push(Phoenix.bind(key, mods, callback));
+}
+
 // ### General key configurations
 //
 // Space toggles the focussed between full screen and its initial size and position.
-bind( 'up', mCmd, cycleCalls(
+bind('up', mCmd, cycleCalls(
   toGrid,
   [
     [0, 0, 1, 0.5],
@@ -50,13 +47,13 @@ bind( 'up', mCmd, cycleCalls(
   ]
 ));
 
-bind( 'down', mCmd, function() {
+bind('down', mCmd, function() {
   Window.focusedWindow().toggleFullscreen();
 });
 
 // The cursor keys together with cmd make any window occupy any
 // half of the screen.
-bind( 'right', mCmd, cycleCalls(
+bind('right', mCmd, cycleCalls(
   toGrid,
   [
     [0.5, 0, 0.5, 1],
@@ -64,7 +61,7 @@ bind( 'right', mCmd, cycleCalls(
   ]
 ));
 
-bind( 'left', mCmd, cycleCalls(
+bind('left', mCmd, cycleCalls(
   toGrid,
   [
     [0, 0, 0.5, 1],
@@ -73,7 +70,7 @@ bind( 'left', mCmd, cycleCalls(
 ));
 
 // Center window.
-bind( 'up', mShort, cycleCalls(
+bind('up', mShort, cycleCalls(
   toGrid,
   [
     [0.22, 0.025, 0.56, 0.95],
@@ -81,7 +78,7 @@ bind( 'up', mShort, cycleCalls(
   ]
 ));
 
-bind( 'down', mShort, cycleCalls(
+bind('down', mShort, cycleCalls(
   toGrid,
   [
     [0.25, 0.5, 0.5, 0.5],
@@ -165,7 +162,6 @@ bind('y', mCmd, function() { App.focusOrStart(y); });
 
 function forApp(name, f) {
   var app = App.findByTitle(name);
-
   if (app) {
     _.each(app.visibleWindows(), f);
   }
@@ -174,7 +170,7 @@ function forApp(name, f) {
 function fixedSize() {
   forApp(w, function(win) {
     win.toGrid(0.25, 0.5, 0.5, 0.5);
-  })
+  });
 
   //forApp(la, function(win) {
   //  win.toLocation(300, 0, 460, 950);
@@ -189,8 +185,8 @@ function fixedSize() {
   //})
 }
 
-bind( '1', mCmd, function() {
-  fixedSize()
+bind('1', mCmd, function() {
+  fixedSize();
 
   var readScreens = new Array(a, k, la);
 
@@ -216,8 +212,8 @@ bind( '1', mCmd, function() {
   });
 });
 
-bind( '2', mCmd, function() {
-  fixedSize()
+bind('2', mCmd, function() {
+  fixedSize();
 
   var readScreens = new Array(a, k, la, lb, lf);
 
@@ -262,24 +258,6 @@ function cycleCalls(fn, argsList) {
   };
 }
 
-// Disables all remembered keys.
-function disableKeys() {
-  active = false;
-  _(keys).each(function(key) {
-    key.disable();
-  });
-  api.alert("done", 0.5);
-}
-
-// Enables all remembered keys.
-function enableKeys() {
-  active = true;
-  _(keys).each(function(key) {
-    key.enable();
-  });
-  api.alert("Phoenix", 0.5);
-}
-
 // ### Helper methods `Window`
 //
 // #### Window#toGrid()
@@ -295,7 +273,7 @@ function enableKeys() {
 //
 // The window will be automatically focussed.  Returns the window instance.
 function windowToGrid(window, x, y, width, height) {
-  var screen = window.screen().frameWithoutDockOrMenu();
+  var screen = window.screen().visibleFrameInRectangle();
 
   window.setFrame({
     x: Math.round( x * screen.width ) + padding + screen.x,
@@ -304,7 +282,7 @@ function windowToGrid(window, x, y, width, height) {
     height: Math.round( height * screen.height ) - ( 2 * padding )
   });
 
-  window.focusWindow();
+  window.focus();
 
   return window;
 }
@@ -318,7 +296,7 @@ Window.prototype.toGrid = function(x, y, width, height) {
 };
 
 Window.prototype.toLocation = function(x, y, width, height) {
-  var screen = this.screen().frameWithoutDockOrMenu();
+  var screen = this.screen().visibleFrameInRectangle();
 
   this.setFrame({
     x: x + screen.x,
@@ -327,7 +305,7 @@ Window.prototype.toLocation = function(x, y, width, height) {
     height: height
   });
 
-  this.focusWindow();
+  this.focus();
 
   return this;
 };
@@ -425,7 +403,7 @@ Window.prototype.toggleFullscreen = function() {
   }
   else {
     previousSizes[ this ] = this.frame();
-    this.toFullScreen();
+    this.maximize();
   }
 
   return this;
@@ -452,7 +430,7 @@ Window.prototype.nudgeLeft = function( factor ) {
 Window.prototype.nudgeRight = function( factor ) {
   var win = Window.focusedWindow(),
     frame = win.frame(),
-    maxLeft = win.screen().frameIncludingDockAndMenu().width - frame.width,
+    maxLeft = win.screen().frameInRectangle().width - frame.width,
     pixels = nudgePixels * ( factor || 1 );
 
   frame.x += ( frame.x < maxLeft - pixels ) ? pixels : 0;
@@ -480,7 +458,7 @@ Window.prototype.nudgeUp = function( factor ) {
 Window.prototype.nudgeDown = function( factor ) {
   var win = Window.focusedWindow(),
     frame = win.frame(),
-    maxLeft = win.screen().frameIncludingDockAndMenu().height - frame.height,
+    maxLeft = win.screen().frameInRectangle().height - frame.height,
     pixels = nudgePixels * ( factor || 1 );
 
   frame.y += ( frame.y < maxLeft - pixels ) ? pixels : 0;
@@ -497,7 +475,7 @@ Window.prototype.nudgeDown = function( factor ) {
 // the first found instance is returned.
 App.findByTitle = function( title ) {
   return _( this.runningApps() ).find( function( app ) {
-    if ( app.title() === title ) {
+    if ( app.name() === title ) {
       app.show();
       return true;
     }
@@ -540,27 +518,27 @@ App.focusOrStart = function ( title ) {
   var app = App.findByTitle( title );
 
   if (typeof app == 'undefined') {
-    api.alert("Starting " + title);
-    api.launch(title)
+    Phoenix.notify("Starting " + title);
+    App.launch(title).focus();
     return;
   }
 
-  var windows = app.allWindows();
+  var windows = app.windows();
 
-  activeWindows = _(windows).reject(function(win) { return win.isWindowMinimized();});
+  activeWindows = _(windows).reject(function(win) { return win.isMinimized();});
   if (_.isEmpty(activeWindows)) {
-    api.alert("All windows minimized for " + title);
+    Phoenix.notify("All windows minimized for " + title);
     return;
   }
 
   var visibleWindows = app.visibleWindows()
 
   if (_.isEmpty(visibleWindows)) {
-    api.alert("No visible windows for " + title);
+    Phoenix.notify("No visible windows for " + title);
     return;
   }
 
-  visibleWindows[ 0 ].focusWindow();
+  visibleWindows[ 0 ].focus();
 };
 
 
@@ -572,8 +550,8 @@ function moveToScreen(win, screen) {
   }
 
   var frame = win.frame();
-  var oldScreenRect = win.screen().frameWithoutDockOrMenu();
-  var newScreenRect = screen.frameWithoutDockOrMenu();
+  var oldScreenRect = win.screen().visibleFrameInRectangle();
+  var newScreenRect = screen.visibleFrameInRectangle();
 
   var xRatio = newScreenRect.width / oldScreenRect.width;
   var yRatio = newScreenRect.height / oldScreenRect.height;
@@ -596,11 +574,11 @@ function rotateMonitors(offset) {
   var win = Window.focusedWindow();
   var currentScreen = win.screen();
   var screens = [currentScreen];
-  for (var x = currentScreen.previousScreen(); x != win.screen(); x = x.previousScreen()) {
+  for (var x = currentScreen.previous(); x != win.screen(); x = x.previous()) {
     screens.push(x);
   }
 
-  screens = _(screens).sortBy(function(s) { return s.frameWithoutDockOrMenu().x; });
+  screens = _(screens).sortBy(function(s) { return s.visibleFrameInRectangle().x; });
   var currentIndex = _(screens).indexOf(currentScreen);
   moveToScreen(win, circularLookup(screens, currentIndex + offset));
 }
@@ -616,6 +594,3 @@ function rightOneMonitor() {
 // ############################################################################
 // Init
 // ############################################################################
-
-// Initially disable all hotkeys
-disableKeys();
