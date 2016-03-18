@@ -92,6 +92,9 @@ if [ "$OS" = "darwin" ] ; then
   # maven
   export PATH=/Users/jerryxu/src/apache-maven/bin:$PATH
 
+  # gradle
+  export PATH=/Users/jerryxu/src/gradle/bin:$PATH
+
   # appcatalyst
   export PATH=/opt/vmware/appcatalyst/bin:$PATH
 
