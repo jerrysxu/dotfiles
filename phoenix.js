@@ -27,7 +27,7 @@ function debug(message) {
 // Remembers hotkey bindings.
 var keys = [];
 function bind(key, mods, callback) {
-  keys.push(Phoenix.bind(key, mods, callback));
+  keys.push(new Key(key, mods, callback));
 }
 
 // ### General key configurations
@@ -48,7 +48,7 @@ bind('up', mCmd, cycleCalls(
 ));
 
 bind('down', mCmd, function() {
-  Window.focusedWindow().toggleFullscreen();
+  Window.focused().toggleFullscreen();
 });
 
 // The cursor keys together with cmd make any window occupy any
@@ -114,7 +114,7 @@ var p = 'Finder';
 var q = 'PhpStorm';
 var r = 'RStudio';
 var s = 'Atom';
-var t = 'Terminal';
+var t = 'iTerm';
 var u = 'Microsoft Outlook';
 var v = 'Evernote';
 var w = 'Things';
@@ -131,6 +131,7 @@ var lg = 'Dash';
 var lh = 'Xcode';
 var li = 'Amazon Music'
 var lj = 'WeChat'
+var lk = 'Keynote'
 
 bind('a', mCmd, function() { App.focusOrStart(a); });
 bind('b', mCmd, function() { App.focusOrStart(b); });
@@ -164,7 +165,7 @@ bind('y', mCmd, function() { App.focusOrStart(y); });
 function forApp(name, f) {
   var app = App.findByTitle(name);
   if (app) {
-    _.each(app.visibleWindows(), f);
+    _.each(app.windows({ visible: true }), f);
   }
 }
 
@@ -232,7 +233,7 @@ bind('2', mCmd, function() {
     });
   });
 
-  var rightScreens = new Array(c);
+  var rightScreens = new Array(c, lk);
 
   _(rightScreens).each(function(title) {
     forApp(title, function(win) {
@@ -297,7 +298,7 @@ function windowToGrid(window, x, y, width, height) {
 }
 
 function toGrid(x, y, width, height) {
-  windowToGrid(Window.focusedWindow(), x, y, width, height);
+  windowToGrid(Window.focused(), x, y, width, height);
 }
 
 Window.prototype.toGrid = function(x, y, width, height) {
@@ -423,7 +424,7 @@ Window.prototype.toggleFullscreen = function() {
 //
 // Move the currently focussed window left by [`nudgePixel`] pixels.
 Window.prototype.nudgeLeft = function( factor ) {
-  var win = Window.focusedWindow(),
+  var win = Window.focused(),
     frame = win.frame(),
     pixels = nudgePixels * ( factor || 1 );
 
@@ -437,7 +438,7 @@ Window.prototype.nudgeLeft = function( factor ) {
 //
 // Move the currently focussed window right by [`nudgePixel`] pixels.
 Window.prototype.nudgeRight = function( factor ) {
-  var win = Window.focusedWindow(),
+  var win = Window.focused(),
     frame = win.frame(),
     maxLeft = win.screen().frameInRectangle().width - frame.width,
     pixels = nudgePixels * ( factor || 1 );
@@ -451,7 +452,7 @@ Window.prototype.nudgeRight = function( factor ) {
 //
 // Move the currently focussed window left by [`nudgePixel`] pixels.
 Window.prototype.nudgeUp = function( factor ) {
-  var win = Window.focusedWindow(),
+  var win = Window.focused(),
     frame = win.frame(),
     pixels = nudgePixels * ( factor || 1 );
 
@@ -465,7 +466,7 @@ Window.prototype.nudgeUp = function( factor ) {
 //
 // Move the currently focussed window right by [`nudgePixel`] pixels.
 Window.prototype.nudgeDown = function( factor ) {
-  var win = Window.focusedWindow(),
+  var win = Window.focused(),
     frame = win.frame(),
     maxLeft = win.screen().frameInRectangle().height - frame.height,
     pixels = nudgePixels * ( factor || 1 );
@@ -483,7 +484,7 @@ Window.prototype.nudgeDown = function( factor ) {
 // instance or `undefined`.  If there are several windows with the same title,
 // the first found instance is returned.
 App.findByTitle = function( title ) {
-  return _( this.runningApps() ).find( function( app ) {
+  return _( this.all() ).find( function( app ) {
     if ( app.name() === title ) {
       app.show();
       return true;
@@ -500,7 +501,7 @@ App.findByTitle = function( title ) {
 App.prototype.findWindowMatchingTitle = function( title ) {
   var regexp = new RegExp( title );
 
-  return _( this.visibleWindows() ).find( function( win ) {
+  return _( this.windows({ visible: true }) ).find( function( win ) {
     return regexp.test( win.title() );
   });
 };
@@ -514,7 +515,7 @@ App.prototype.findWindowMatchingTitle = function( title ) {
 App.prototype.findWindowNotMatchingTitle = function( title ) {
   var regexp = new RegExp( title );
 
-  return _( this.visibleWindows() ).find( function( win ) {
+  return _( this.windows({ visible: true }) ).find( function( win ) {
     return !regexp.test( win.title() );
   });
 };
@@ -540,7 +541,7 @@ App.focusOrStart = function ( title ) {
     return;
   }
 
-  var visibleWindows = app.visibleWindows()
+  var visibleWindows = app.windows({ visible: true });
 
   if (_.isEmpty(visibleWindows)) {
     Phoenix.notify("No visible windows for " + title);
@@ -580,7 +581,7 @@ function circularLookup(array, index) {
 }
 
 function rotateMonitors(offset) {
-  var win = Window.focusedWindow();
+  var win = Window.focused();
   var currentScreen = win.screen();
   var screens = [currentScreen];
   for (var x = currentScreen.previous(); x != win.screen(); x = x.previous()) {
