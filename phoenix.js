@@ -99,9 +99,9 @@ bind('right', mShort, rightOneMonitor);
 var a = 'Activity Monitor';
 var b = 'Safari'
 var c = 'Google Chrome';
-var d = 'python'
+var d = '1Password 6'
 var e = 'Slack';
-var f = 'Firefox';
+var f = 'Keynote';
 var g = 'SourceTree';
 var i = 'iTunes';
 var j = 'IntelliJ IDEA';
@@ -109,7 +109,7 @@ var k = 'Skype';
 var l = 'Calendar';
 var m = 'Mail';
 var n = 'Navicat for PostgreSQL';
-var o = 'NeteaseMusic';
+var o = 'Amazon Music';
 var p = 'Finder';
 var q = 'PhpStorm';
 var r = 'RStudio';
@@ -124,14 +124,14 @@ var y = 'PyCharm';
 var la = 'Messages';
 var lb = 'Preview';
 var lc = 'MacDown';
-var ld = '1Password 6';
+var ld = 'python';
 var le = 'Android Studio';
 var lf = 'iBooks';
 var lg = 'Dash';
 var lh = 'Xcode';
-var li = 'Amazon Music'
-var lj = 'WeChat'
-var lk = 'Keynote'
+var li = 'NeteaseMusic';
+var lj = 'WeChat';
+var lk = 'Firefox';
 
 bind('a', mCmd, function() { App.focusOrStart(a); });
 bind('b', mCmd, function() { App.focusOrStart(b); });
@@ -283,7 +283,7 @@ function cycleCalls(fn, argsList) {
 //
 // The window will be automatically focussed.  Returns the window instance.
 function windowToGrid(window, x, y, width, height) {
-  var screen = window.screen().visibleFrameInRectangle();
+  var screen = window.screen().flippedVisibleFrame();
 
   window.setFrame({
     x: Math.round( x * screen.width ) + padding + screen.x,
@@ -306,7 +306,7 @@ Window.prototype.toGrid = function(x, y, width, height) {
 };
 
 Window.prototype.toLocation = function(x, y, width, height) {
-  var screen = this.screen().visibleFrameInRectangle();
+  var screen = this.screen().flippedVisibleFrame();
 
   this.setFrame({
     x: x + screen.x,
@@ -560,8 +560,8 @@ function moveToScreen(win, screen) {
   }
 
   var frame = win.frame();
-  var oldScreenRect = win.screen().visibleFrameInRectangle();
-  var newScreenRect = screen.visibleFrameInRectangle();
+  var oldScreenRect = win.screen().flippedVisibleFrame();
+  var newScreenRect = screen.flippedVisibleFrame();
 
   var xRatio = newScreenRect.width / oldScreenRect.width;
   var yRatio = newScreenRect.height / oldScreenRect.height;
@@ -588,7 +588,7 @@ function rotateMonitors(offset) {
     screens.push(x);
   }
 
-  screens = _(screens).sortBy(function(s) { return s.visibleFrameInRectangle().x; });
+  screens = _(screens).sortBy(function(s) { return s.flippedVisibleFrame().x; });
   var currentIndex = _(screens).indexOf(currentScreen);
   moveToScreen(win, circularLookup(screens, currentIndex + offset));
 }

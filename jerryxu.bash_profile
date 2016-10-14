@@ -46,6 +46,7 @@ if [ "$OS" = "darwin" ] ; then
   alias fixshr="osascript ~/tools/dotfiles/applescripts/RemoteLogin.scpt"
   alias fixkb="osascript ~/tools/dotfiles/applescripts/KeyboardDisableMissionControl.scpt"
   alias opfs="osascript ~/tools/dotfiles/applescripts/MonitorFoscamUploads.scpt"
+  alias opmfu="osascript ~/tools/dotfiles/applescripts/MFUFinderFolders.scpt"
   alias lcs="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
   alias st="open -a SourceTree"
@@ -123,4 +124,16 @@ if [ "$OS" = "darwin" ] ; then
 
   # VMWare appcatalyst
   # alias startvm="nohup /opt/vmware/appcatalyst/bin/appcatalyst-daemon >/dev/null 2>&1 &"
+
+  ec2inst() {
+    aws ec2 describe-instances --filters "Name=tag:Name, Values=*$1*" --query "Reservations[*].Instances[*][Tags[?Key=='Name'].Value[],PublicDnsName]" --output text
+  }
+
+  function xtitle () {
+    echo -ne "\033]0;"$@"\007"
+  }
+
+  function infoqd () {
+    infoqscraper presentation download -t h264_overlay $1
+  }
 fi
