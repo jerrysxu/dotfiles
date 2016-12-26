@@ -97,29 +97,29 @@ if [ "$OS" = "darwin" ] ; then
   export PATH=/Users/jerryxu/src/gradle/bin:$PATH
 
   # appcatalyst
-  export PATH=/opt/vmware/appcatalyst/bin:$PATH
+  # export PATH=/opt/vmware/appcatalyst/bin:$PATH
 
   # For better psql paging
   export PAGER=less
   # export LESS="-iMSx4 -FX"
 
   ### Added by the Heroku Toolbelt
-  export PATH="/usr/local/heroku/bin:$PATH"
+  # export PATH="/usr/local/heroku/bin:$PATH"
 
   # added by Anaconda 2.1.0 installer
   function ana {
     export PATH="/Users/jerryxu/anaconda/bin:$PATH"
   }
 
-  export DOCKER_IP=`cat ~/.docker-ip`
-  alias dockr='docker -H tcp://$DOCKER_IP:4243'
+  # export DOCKER_IP=`cat ~/.docker-ip`
+  # alias dockr='docker -H tcp://$DOCKER_IP:4243'
 
-  alias dockrmongo='dockr run -d -v /data/docker/mongodb:/data -p 27017:27017 -p 28017:28017 dockerfile/mongodb'
+  # alias dockrmongo='dockr run -d -v /data/docker/mongodb:/data -p 27017:27017 -p 28017:28017 dockerfile/mongodb'
   # alias dockrmysql='dockr run --name dockermysql -d mysql -e MYSQL_ROOT_PASSWORD=sa -v /data/docker/mysql:/var/lib/mysql -p 0.0.0.0:3306:3306'
-  alias dockrmysql='dockr run -d -e MYSQL_ROOT_PASSWORD=sa -p 0.0.0.0:3306:3306 mysql'
+  # alias dockrmysql='dockr run -d -e MYSQL_ROOT_PASSWORD=sa -p 0.0.0.0:3306:3306 mysql'
 
   # spark
-  export SPARK_HOME=/Users/jerryxu/src/opensource/spark
+  export SPARK_HOME=/Users/jerryxu/src/sandbox/spark
   export PYTHONPATH=$PYTHONPATH:$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.8.2.1-src.zip
 
   # VMWare appcatalyst
