@@ -1,9 +1,5 @@
 # Alias -----------------------------------------------------------------------
 alias lr='ls -ltra'
-alias tl='tail -f /var/log/lyft/*.log'
-alias glg='cd /var/log/lyft'
-alias gsv='cd /srv/service/current'
-alias gut='cd /srv/service/current/tests/unit'
 alias ve="source ./venv/bin/activate"
 
 # Input -----------------------------------------------------------------------
@@ -12,6 +8,9 @@ bind '"\e[Z":menu-complete'
 
 #bind '"\C-j":menu-complete'
 #bind '"\C-k":menu-complete-backward'
+if [ -f /etc/bash_completion ]; then
+ . /etc/bash_completion
+fi
 
 bind "set completion-ignore-case on" # note: bind used instead of sticking these in .inputrc
 bind "set show-all-if-ambiguous On" # show list automatically, without double tab
@@ -20,7 +19,7 @@ bind "set bell-style none" # no bell
 # Colors ----------------------------------------------------------------------
 export TERM=screen
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
-export CLICOLOR=1 
+export CLICOLOR=1
 
 alias ls='ls --color=auto'
 # ls colors, see: http://www.linux-sxs.org/housekeeping/lscolors.html
@@ -64,7 +63,7 @@ virtualenv_prompt() {
 
 prompt_func() {
   previous_return_value=$?;
-  prompt="\[${COLOR_GREEN}\][${SERVICE_NAME}] \[${COLOR_PURPLE}\]\w\[${COLOR_BLUE}\]$(virtualenv_prompt)\[${COLOR_NC}\] "
+  prompt=" \[${COLOR_PURPLE}\]\w\[${COLOR_BLUE}\]$(virtualenv_prompt)\[${COLOR_PURPLE}\]$(conda_prompt)\[${COLOR_NC}\] "
 
   if test $previous_return_value -eq 0
   then
@@ -82,7 +81,7 @@ export PS4='+'     # Prompt 4
 # Navigation ------------------------------------------------------------------
 alias ..='cd ..'
 alias ...='cd .. ; cd ..'
-cl() { cd $1; ls -la; } 
+cl() { cd $1; ls -la; }
 
 # Other aliases ---------------------------------------------------------------
 alias ll='ls -hl'
@@ -92,7 +91,7 @@ alias lla='ls -lah'
 # Search ----------------------------------------------------------------------
 # Use ack for grepping and find if ack is available
 # sudo port install p5-app-ack
-if type -P ack &>/dev/null ; then 
+if type -P ack &>/dev/null ; then
   g(){
     ack "$*" --color-match=green --color-filename=blue --smart-case
   }
@@ -116,4 +115,3 @@ else
     find . -iname "$1"
   }
 fi
-

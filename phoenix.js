@@ -99,7 +99,7 @@ bind('right', mShort, rightOneMonitor);
 var a = 'Activity Monitor';
 var b = 'Safari'
 var c = 'Google Chrome';
-var d = '1Password 6'
+var d = 'Dash'
 var e = 'Slack';
 var f = 'Keynote';
 var g = 'SourceTree';
@@ -127,7 +127,7 @@ var lc = 'MacDown';
 var ld = 'python';
 var le = 'Android Studio';
 var lf = 'iBooks';
-var lg = 'Dash';
+var lg = '1Password 6';
 var lh = 'Xcode';
 var li = 'NeteaseMusic';
 var lj = 'WeChat';
@@ -588,7 +588,8 @@ function rotateMonitors(offset) {
     screens.push(x);
   }
 
-  screens = _(screens).sortBy(function(s) { return s.flippedVisibleFrame().x; });
+  screens = _.sortBy(screens, [function(s) { return s.flippedVisibleFrame().x; }]);
+
   var currentIndex = _(screens).indexOf(currentScreen);
   moveToScreen(win, circularLookup(screens, currentIndex + offset));
 }

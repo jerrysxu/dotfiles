@@ -119,8 +119,8 @@ if [ "$OS" = "darwin" ] ; then
   # alias dockrmysql='dockr run -d -e MYSQL_ROOT_PASSWORD=sa -p 0.0.0.0:3306:3306 mysql'
 
   # spark
-  export SPARK_HOME=/Users/jerryxu/src/sandbox/spark
-  export PYTHONPATH=$PYTHONPATH:$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.8.2.1-src.zip
+  # export SPARK_HOME=/Users/jerryxu/src/sandbox/spark
+  # export PYTHONPATH=$PYTHONPATH:$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.8.2.1-src.zip
 
   # VMWare appcatalyst
   # alias startvm="nohup /opt/vmware/appcatalyst/bin/appcatalyst-daemon >/dev/null 2>&1 &"
