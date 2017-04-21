@@ -19,7 +19,7 @@ else
 fi
 
 if [ -d /usr/local/bin ]; then
-	export PATH=/usr/local/bin:$PATH
+  export PATH=/usr/local/bin:$PATH
 fi
 
 # Remote ----------------------------------------------------------------------
@@ -99,6 +99,8 @@ if [ "$OS" = "darwin" ] ; then
   # appcatalyst
   # export PATH=/opt/vmware/appcatalyst/bin:$PATH
 
+  source /Users/jerryxu/tools/dotfiles/iterm2_shell_integration.bash
+
   # For better psql paging
   export PAGER=less
   # export LESS="-iMSx4 -FX"
@@ -127,6 +129,18 @@ if [ "$OS" = "darwin" ] ; then
 
   ec2inst() {
     aws ec2 describe-instances --filters "Name=tag:Name, Values=*$1*" --query "Reservations[*].Instances[*][Tags[?Key=='Name'].Value[],PublicDnsName]" --output text
+  }
+
+  sshutil() {
+    cd /Users/jerryxu/src/sandbox/tools
+    source venv/bin/activate
+    sshuttle --dns -r ec2-52-36-199-105.us-west-2.compute.amazonaws.com 0/0
+  }
+
+  sshaz() {
+    cd /Users/jerryxu/src/sandbox/tools
+    source venv/bin/activate
+    sshuttle --dns -r jerry@40.80.155.197 0/0
   }
 
   function xtitle () {
