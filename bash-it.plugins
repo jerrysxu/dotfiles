@@ -2,7 +2,6 @@ ack.plugin.bash
 base.plugin.bash
 dirs.plugin.bash
 git-prompt.plugin.bash
-git.plugin.bash
 history.plugin.bash
 java.plugin.bash
 osx.plugin.bash

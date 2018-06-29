@@ -61,11 +61,11 @@ on run arguments
                 tell current session
                     repeat with host in hosts
                         if columnsFlag then
-                            split horizontally with same profile
+                            split horizontally with same profile command "ssh " & sshArgs & host
                         else
-                            split vertically with same profile
+                            split vertically with same profile command "ssh " & sshArgs & host
                         end if
-                        write text "ssh " & sshArgs & host
+                        -- write text "ssh " & sshArgs & host
                     end repeat
                 end tell
 

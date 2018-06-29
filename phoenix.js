@@ -112,12 +112,12 @@ var n = 'Navicat for PostgreSQL';
 var o = 'Amazon Music';
 var p = 'Finder';
 var q = 'PhpStorm';
-var r = 'RStudio';
+var r = 'Path Finder';
 var s = 'Atom';
 var t = 'iTerm';
 var u = 'Microsoft Outlook';
 var v = 'Evernote';
-var w = 'Things';
+var w = 'Pagico';
 var x = 'Xcode';
 var y = 'PyCharm';
 

@@ -48,6 +48,7 @@ if [ "$OS" = "darwin" ] ; then
   alias opfs="osascript ~/tools/dotfiles/applescripts/MonitorFoscamUploads.scpt"
   alias opmfu="osascript ~/tools/dotfiles/applescripts/MFUFinderFolders.scpt"
   alias lcs="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+  alias bcam="osascript ~/tools/dotfiles/applescripts/AddCamToSidebar.scpt"
 
   alias st="open -a SourceTree"
   alias kd="/Applications/kdiff3.app/Contents/MacOS/kdiff3"
@@ -110,7 +111,7 @@ if [ "$OS" = "darwin" ] ; then
 
   # added by Anaconda 2.1.0 installer
   function ana {
-    export PATH="/Users/jerryxu/anaconda/bin:$PATH"
+    export PATH="/Users/jerryxu/anaconda3/bin:$PATH"
   }
 
   # export DOCKER_IP=`cat ~/.docker-ip`
@@ -134,7 +135,7 @@ if [ "$OS" = "darwin" ] ; then
   sshutil() {
     cd /Users/jerryxu/src/sandbox/tools
     source venv/bin/activate
-    sshuttle --dns -r ec2-52-36-199-105.us-west-2.compute.amazonaws.com 0/0
+    sshuttle --dns -r ec2-34-209-77-137.us-west-2.compute.amazonaws.com 0/0
   }
 
   sshaz() {
@@ -149,5 +150,18 @@ if [ "$OS" = "darwin" ] ; then
 
   function infoqd () {
     infoqscraper presentation download -t h264_overlay $1
+  }
+
+  function pcam () {
+    rm -rf "/Volumes/UltraFit/Box Sync/foscam/1/FI9821W_00626E4D02BF/snap"/*
+    rm -rf "/Volumes/UltraFit/Box Sync/foscam/1/FI9821W_00626E4D02BF/record"/*
+    rm -rf "/Volumes/UltraFit/Box Sync/foscam/2/FI9821W_C4D6553B24E0/snap"/*
+    rm -rf "/Volumes/UltraFit/Box Sync/foscam/2/FI9821W_C4D6553B24E0/record"/*
+    rm -rf "/Volumes/UltraFit/Box Sync/foscam/3/FI9821P_00626E6AFCF6/snap"/*
+    rm -rf "/Volumes/UltraFit/Box Sync/foscam/3/FI9821P_00626E6AFCF6//record"/*
+  }
+
+  function vcam () {
+    /Applications/Sequential.app/Contents/MacOS/Sequential "/Volumes/UltraFit/Box Sync/foscam/1/FI9821W_00626E4D02BF/snap" "/Volumes/UltraFit/Box Sync/foscam/2/FI9821W_C4D6553B24E0/snap" "/Volumes/UltraFit/Box Sync/foscam/3/FI9821P_00626E6AFCF6/snap" &
   }
 fi
