@@ -20,6 +20,7 @@ link ~/tools/dotfiles/gitignore ~/.gitignore
 link ~/tools/dotfiles/tmux.conf ~/.tmux.conf
 link ~/tools/dotfiles/phoenix.js ~/.phoenix.js
 link ~/tools/dotfiles/jekyllconfig ~/.jekyllconfig
+link ~/tools/dotfiles/jerryxu.zshrc ~/.zshrc
 
 mkdir ~/tools/bash-it/aliases/enabled
 for i in $(cat ~/tools/dotfiles/bash-it.aliases)

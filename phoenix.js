@@ -103,35 +103,33 @@ var d = 'Dash'
 var e = 'Slack';
 var f = 'Keynote';
 var g = 'SourceTree';
-var i = 'iTunes';
+var i = 'Music';
 var j = 'IntelliJ IDEA';
-var k = 'Skype';
+var k = 'LINE';
 var l = 'Calendar';
 var m = 'Mail';
-var n = 'Navicat for PostgreSQL';
+var n = 'Microsoft Word';
 var o = 'Amazon Music';
 var p = 'Finder';
-var q = 'PhpStorm';
+var q = 'Trello';
 var r = 'Path Finder';
 var s = 'Atom';
-var t = 'iTerm';
+var t = 'iTerm2';
 var u = 'Microsoft Outlook';
 var v = 'Evernote';
-var w = 'Pagico';
-var x = 'Xcode';
+var w = 'Quiver';
+var x = '1Password 6';
 var y = 'PyCharm';
 
 var la = 'Messages';
 var lb = 'Preview';
 var lc = 'MacDown';
 var ld = 'python';
-var le = 'Android Studio';
-var lf = 'iBooks';
-var lg = '1Password 6';
-var lh = 'Xcode';
-var li = 'NeteaseMusic';
-var lj = 'WeChat';
-var lk = 'Firefox';
+var le = 'Books';
+var lf = 'Xcode';
+var lg = 'Ring';
+var lh = 'WeChat';
+var li = 'Microsoft Excel'
 
 bind('a', mCmd, function() { App.focusOrStart(a); });
 bind('b', mCmd, function() { App.focusOrStart(b); });
@@ -190,7 +188,7 @@ function fixedSize() {
 bind('1', mCmd, function() {
   fixedSize();
 
-  var readScreens = new Array(a, k, la, lj);
+  var readScreens = new Array(a, k, la, lg, lh);
 
   _(readScreens).each(function(title) {
     forApp(title, function(win) {
@@ -198,14 +196,14 @@ bind('1', mCmd, function() {
     });
   });
 
-  var mainScreens = new Array(e, lb, ld, lf);
+  var mainScreens = new Array(e, lb, ld, le);
   _(mainScreens).each(function(title) {
     forApp(title, function(win) {
       win.toGrid( 0, 0, 0.75, 1 )
     });
   });
 
-  var fullScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, p, q, r, s, t, u, v, x, y, lc, le, lg, lh, li);
+  var fullScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, p, q, r, s, t, u, v, w, x, y, lc, lf, li);
 
   _(fullScreens).each(function(title) {
     forApp(title, function(win) {
@@ -217,7 +215,7 @@ bind('1', mCmd, function() {
 bind('2', mCmd, function() {
   fixedSize();
 
-  var readScreens = new Array(a, k, la, lb, lf, lj);
+  var readScreens = new Array(a, k, la, lb, le, lg, lh);
 
   _(readScreens).each(function(title) {
     forApp(title, function(win) {
@@ -225,7 +223,7 @@ bind('2', mCmd, function() {
     });
   });
 
- var mainScreens = new Array(b, d, e, f, g, i, l, m, n, o, p, q, r, s, u, v, x, lc, ld, le, lg, lh, li);
+ var mainScreens = new Array(b, d, e, f, g, i, l, m, n, o, p, r, s, u, v, w, x, lc, ld, li);
 
   _(mainScreens).each(function(title) {
     forApp(title, function(win) {
@@ -233,15 +231,15 @@ bind('2', mCmd, function() {
     });
   });
 
-  var rightScreens = new Array(c, lk);
+  var rightScreens = new Array(c);
 
   _(rightScreens).each(function(title) {
     forApp(title, function(win) {
-      win.toGrid( 0.25, 0, 1, 1 )
+      win.toGrid( 0.25, 0, 0.75, 1 )
     });
   });
 
-  var fullScreens = new Array(j, t, y);
+  var fullScreens = new Array(j, q, t, y, lf);
 
   _(fullScreens).each(function(title) {
     forApp(title, function(win) {
