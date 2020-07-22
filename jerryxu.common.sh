@@ -19,7 +19,7 @@ else
 fi
 
 if [ -d /usr/local/bin ]; then
-  export PATH=/usr/local/bin:$PATH
+  export PATH=/usr/local/opt/python/libexec/bin:/usr/local/bin:$PATH
 fi
 
 # Remote ----------------------------------------------------------------------
@@ -97,8 +97,20 @@ if [ "$OS" = "darwin" ] ; then
 
   # added by Anaconda 2.1.0 installer
   function ana {
-    export PATH="~/anaconda3/bin:$PATH"
-    . ~/anaconda3/etc/profile.d/conda.sh
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/Users/jerryxu/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/Users/jerryxu/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/Users/jerryxu/opt/anaconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/Users/jerryxu/opt/anaconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
   }
 
   # export DOCKER_IP=`cat ~/.docker-ip`
@@ -119,16 +131,16 @@ if [ "$OS" = "darwin" ] ; then
     aws ec2 describe-instances --filters "Name=tag:Name, Values=*$1*" --query "Reservations[*].Instances[*][Tags[?Key=='Name'].Value[],PublicDnsName]" --output text
   }
 
-  sshutil() {
+  sshhome() {
     cd ~/src/sandbox/tools
     source venv/bin/activate
-    sshuttle --dns -r ec2-34-209-77-137.us-west-2.compute.amazonaws.com 0/0
+    sshuttle --dns -r pi@jerryxu.noip.me 0/0
   }
 
-  sshaz() {
+  sshoffice() {
     cd ~/src/sandbox/tools
     source venv/bin/activate
-    sshuttle --dns -r jerry@40.80.155.197 0/0
+    sshuttle --dns -r datatron@officebay.hopto.org 0/0
   }
 
   function xtitle () {
@@ -180,23 +192,22 @@ if [ "$OS" = "darwin" ] ; then
   unalias g &>/dev/null
   # Use ack for grepping and find if ack is available
   if which ack &>/dev/null ; then
-    function g() {
+    function gg() {
       ack "$*" --smart-case
     }
     function gwd() {
       ack "$*" --word-regexp --smart-case
     }
-    function f() {
+    function gf() {
       ack -i --type-set='all:match:.*' -k -g ".*${*}[^\/]*$"
     }
-  else
-    function g() {
-      grep -Rin $1 *
-    }
-    function f() {
-      find . -iname "$1"
-    }
   fi
+  function g() {
+    grep -Rin $1 *
+  }
+  function f() {
+    find . -iname "*$1*"
+  }
 
-  neofetch --ascii ~/tools/dotfiles/datatron-40.ascii.txt
+  neofetch --ascii ~/tools/dotfiles/vendetta.ascii.60.txt
 fi

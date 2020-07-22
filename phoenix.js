@@ -203,11 +203,19 @@ bind('1', mCmd, function() {
     });
   });
 
-  var fullScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, p, q, r, s, t, u, v, w, x, y, lc, lf, li);
+  var fullScreens = new Array(b, c, d, f, g, i, j, l, m, n, o, q, r, s, t, u, v, w, x, y, lc, lf, li);
 
   _(fullScreens).each(function(title) {
     forApp(title, function(win) {
       win.toFullScreen();
+    });
+  });
+
+  var fullScreens2880 = new Array(p);
+
+  _(fullScreens2880).each(function(title) {
+    forApp(title, function(win) {
+      win.toFullScreen2880();
     });
   });
 });
@@ -326,6 +334,9 @@ Window.prototype.toFullScreen = function() {
   return this.toGrid( 0, 0, 1, 1 );
 };
 
+Window.prototype.toFullScreen2880 = function() {
+  return this.toGrid( 0, 0, 0.9375, 1 );
+};
 
 // #### Window#toN()
 //

@@ -88,6 +88,8 @@ plugins=(
   zsh-syntax-highlighting
 )
 
+export ZSH_HIGHLIGHT_MAXLENGTH=60
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -121,3 +123,7 @@ bindkey -s '^o' 'lfcd\n'
 
 # iterm2 integration
 source ~/tools/dotfiles/iterm2_shell_integration.zsh
+
+# Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
