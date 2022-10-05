@@ -80,9 +80,6 @@ plugins=(
   git
   z
   zsh-autosuggestions
-  docker
-  docker-compose
-  docker-machine
   extract
   sudo
   zsh-syntax-highlighting
@@ -118,12 +115,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/tools/dotfiles/jerryxu.common.sh
+source ~/tools/dotfiles/jerryxu.mac.sh
 bindkey -s '^o' 'lfcd\n'
 
 # iterm2 integration
 source ~/tools/dotfiles/iterm2_shell_integration.zsh
-
-# Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm

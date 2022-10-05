@@ -1,8 +1,0 @@
-bash-it.completion.bash
-defaults.completion.bash
-git.completion.bash
-maven.completion.bash
-pip.completion.bash
-ssh.completion.bash
-tmux.completion.bash
-todo.completion.bash
