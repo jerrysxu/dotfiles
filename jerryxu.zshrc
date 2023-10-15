@@ -8,7 +8,7 @@ export ZSH=~/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 POWERLEVEL9K_MODE="nerdfont-complete"
 
@@ -77,8 +77,8 @@ DISABLE_AUTO_TITLE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  z
+  # git
+  # z
   zsh-autosuggestions
   extract
   sudo
@@ -120,3 +120,5 @@ bindkey -s '^o' 'lfcd\n'
 
 # iterm2 integration
 source ~/tools/dotfiles/iterm2_shell_integration.zsh
+eval "$(zoxide init zsh)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

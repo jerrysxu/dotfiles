@@ -13,10 +13,19 @@ if [ -d /opt/facebook/bin ]; then
   export PATH=/opt/facebook/bin:$PATH
 fi
 
+if [ -d "/Users/jerryxu/Library/Application Support/JetBrains/Toolbox/scripts" ]; then
+  export PATH="/Users/jerryxu/Library/Application Support/JetBrains/Toolbox/scripts":$PATH
+fi
+
 # Alias -----------------------------------------------------------------------
 alias st="open -a SourceTree"
-alias lr="ls -ltra"
+alias ls="lsd"
+alias ll="lsd -ltra"
+alias cat="bat"
 alias ve="source ./venv/bin/activate"
+alias mac="/Users/jerryxu/src/opensource/m1ddc/m1ddc display 2 set input 17"
+alias pc="/Users/jerryxu/src/opensource/m1ddc/m1ddc display 2 set input 15"
+alias fbat="fzf --preview \"bat --color=always --style=numbers --line-range=:500 {}\""
 
 ###############################################################################
 # java version

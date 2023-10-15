@@ -609,7 +609,7 @@
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>ASCII Ligatures</key>
-			<true/>
+			<false/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -997,12 +997,16 @@
 					<key>Text</key>
 					<string>[1;2D</string>
 				</dict>
-				<key>0xf702-0x240000</key>
+				<key>0xf702-0x240000-0x0</key>
 				<dict>
 					<key>Action</key>
 					<integer>10</integer>
+					<key>Label</key>
+					<string></string>
 					<key>Text</key>
 					<string>B</string>
+					<key>Version</key>
+					<integer>0</integer>
 				</dict>
 				<key>0xf702-0x260000</key>
 				<dict>
@@ -1181,7 +1185,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>HackNerdFontComplete-Bold 12</string>
+			<string>HackNFM-Regular 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
