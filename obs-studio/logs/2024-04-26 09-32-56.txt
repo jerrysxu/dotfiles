@@ -1,0 +1,206 @@
+09:32:56.756: [macOS] Permission for audio device access granted.
+09:32:56.760: [macOS] Permission for video device access granted.
+09:32:56.764: [macOS] Permission for accessibility granted.
+09:32:56.771: [macOS] Permission for screen capture granted.
+09:32:56.771: CPU Name: Apple M1 Pro
+09:32:56.771: Physical Cores: 10, Logical Cores: 10
+09:32:56.771: Physical Memory: 32768MB Total
+09:32:56.771: Model Identifier: MacBookPro18,1
+09:32:56.771: OS Name: macOS
+09:32:56.772: OS Version: Version 14.4.1 (Build 23E224)
+09:32:56.772: Rosetta translation used: false
+09:32:56.772: Kernel Version: 23.4.0
+09:32:56.773: hotkeys-cocoa: Using layout 'com.apple.keylayout.US'
+09:32:56.773: Current Date/Time: 2024-04-26, 09:32:56
+09:32:56.773: Browser Hardware Acceleration: true
+09:32:56.773: Qt Version: 6.6.2 (runtime), 6.6.2 (compiled)
+09:32:56.773: Portable mode: false
+09:32:57.488: OBS 30.1.2 (mac)
+09:32:57.488: ---------------------------------
+09:32:57.489: ---------------------------------
+09:32:57.489: audio settings reset:
+09:32:57.489: 	samples per sec: 48000
+09:32:57.489: 	speakers:        2
+09:32:57.489: 	max buffering:   960 milliseconds
+09:32:57.489: 	buffering type:  dynamically increasing
+09:32:57.537: ---------------------------------
+09:32:57.537: Initializing OpenGL...
+09:32:57.669: Loading up OpenGL on adapter Apple Apple M1 Pro
+09:32:57.669: OpenGL loaded successfully, version 4.1 Metal - 88, shading language 4.10
+09:32:58.051: ---------------------------------
+09:32:58.051: video settings reset:
+09:32:58.051: 	base resolution:   1920x1080
+09:32:58.051: 	output resolution: 1920x1080
+09:32:58.051: 	downscale filter:  Bicubic
+09:32:58.051: 	fps:               30/1
+09:32:58.051: 	format:            NV12
+09:32:58.051: 	YUV mode:          Rec. 709/Partial
+09:32:58.051: NV12 texture support not available
+09:32:58.051: P010 texture support not available
+09:32:58.051: Audio monitoring device:
+09:32:58.051: 	name: Default
+09:32:58.051: 	id: default
+09:32:58.051: ---------------------------------
+09:32:58.149: No AJA devices found, skipping loading AJA UI plugin
+09:32:58.149: Failed to initialize module 'aja-output-ui'
+09:32:58.248: No AJA devices found, skipping loading AJA plugin
+09:32:58.248: Failed to initialize module 'aja'
+09:32:58.332: Failed to load 'en-US' text for module: 'decklink-captions'
+09:32:58.368: Failed to load 'en-US' text for module: 'decklink-output-ui'
+09:32:58.406: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+09:32:58.406: Failed to initialize module 'decklink'
+09:33:01.418: [obs-browser]: Version 2.23.4
+09:33:01.418: [obs-browser]: CEF Version 103.0.5060.134 (runtime), 103.61.26+g3630089+chromium-103.0.5060.134 (compiled)
+09:33:01.958: [obs-websocket] [obs_module_load] you can haz websockets (Version: 5.4.2 | RPC Version: 1)
+09:33:01.958: [obs-websocket] [obs_module_load] Qt version (compile-time): 6.6.2 | Qt version (run-time): 6.6.2
+09:33:01.958: [obs-websocket] [obs_module_load] Linked ASIO Version: 102900
+09:33:01.963: [obs-websocket] [obs_module_load] Module loaded.
+09:33:02.137: [vlc-video]: VLC 3.0.20 Vetinari found, VLC video source enabled
+09:33:03.019: [obs-backgroundremoval] Plugin loaded successfully (version 1.1.12)
+09:33:03.024: ---------------------------------
+09:33:03.024:   Loaded Modules:
+09:33:03.024:     obs-backgroundremoval
+09:33:03.024:     vlc-video
+09:33:03.024:     text-freetype2
+09:33:03.024:     rtmp-services
+09:33:03.024:     obs-x264
+09:33:03.024:     obs-websocket
+09:33:03.024:     obs-webrtc
+09:33:03.024:     obs-vst
+09:33:03.024:     obs-transitions
+09:33:03.024:     obs-outputs
+09:33:03.024:     obs-filters
+09:33:03.024:     obs-ffmpeg
+09:33:03.024:     obs-browser
+09:33:03.024:     mac-virtualcam
+09:33:03.024:     mac-videotoolbox
+09:33:03.024:     mac-syphon
+09:33:03.024:     mac-capture
+09:33:03.024:     mac-avcapture
+09:33:03.024:     mac-avcapture-legacy
+09:33:03.024:     image-source
+09:33:03.024:     frontend-tools
+09:33:03.024:     decklink-output-ui
+09:33:03.024:     decklink-captions
+09:33:03.024:     coreaudio-encoder
+09:33:03.024: ---------------------------------
+09:33:03.024: [VideoToolbox encoder]: Added VideoToolbox encoders
+09:33:03.025: QWidget::setTabOrder: 'first' and 'second' must be in the same window
+09:33:03.025: ==== Startup complete ===============================================
+09:33:05.131: All scene data cleared
+09:33:05.131: ------------------------------------------------
+09:33:05.392: [Media Source 'Code']: settings:
+09:33:05.392: 	input:                   /Users/jerryxu/Downloads/Backgrounds/Code_flythough_loop_01_Videvo.mov
+09:33:05.392: 	input_format:            (null)
+09:33:05.392: 	speed:                   100
+09:33:05.392: 	is_looping:              yes
+09:33:05.392: 	is_linear_alpha:         no
+09:33:05.392: 	is_hw_decoding:          yes
+09:33:05.392: 	is_clear_on_media_end:   yes
+09:33:05.392: 	restart_on_activate:     yes
+09:33:05.392: 	close_when_inactive:     no
+09:33:05.392: 	full_decode:             no
+09:33:05.392: 	ffmpeg_options:          
+09:33:05.689: Video Capture Device: Selected device 'C922 Pro Stream Webcam'
+09:33:05.704: Video Capture Device: Using preset 1920x1080
+09:33:06.606: Switched to scene 'Scene'
+09:33:06.607: ------------------------------------------------
+09:33:06.607: Loaded scenes:
+09:33:06.607: - scene 'Scene':
+09:33:06.621:     - source: 'Code' (ffmpeg_source)
+09:33:06.621:     - source: 'FB 22' (image_source)
+09:33:06.621:     - source: 'Yale' (image_source)
+09:33:06.621:     - source: 'BOS' (image_source)
+09:33:06.621:     - source: 'Cheers' (image_source)
+09:33:06.621:     - source: 'Dome' (image_source)
+09:33:06.621:     - source: 'Meta' (image_source)
+09:33:06.621:     - source: 'Video Capture Device' (av_capture_input_v2)
+09:33:06.621:         - filter: 'Chroma Key' (chroma_key_filter_v2)
+09:33:06.621: ------------------------------------------------
+09:33:07.588: [obs-backgroundremoval] Latest release is 1.1.13
+09:33:07.705: [mac-virtualcam] macOS Camera Extension activated successfully.
+09:33:09.719: ==== Virtual Camera Start ==========================================
+09:33:09.719: Starting Virtual Camera output to Program
+16:08:36.661: ==== Shutting down ==================================================
+16:08:36.662: Output 'virtualcam_output': stopping
+16:08:36.662: Output 'virtualcam_output': Total frames output: 711804
+16:08:36.662: Output 'virtualcam_output': Total drawn frames: 711536 (711804 attempted)
+16:08:36.662: Output 'virtualcam_output': Number of lagged frames due to rendering lag/stalls: 268 (0.0%)
+16:08:36.662: Video stopped, number of skipped frames due to encoding lag: 55/711804 (0.0%)
+16:08:36.666: ==== Virtual Camera Stop ===========================================
+16:08:37.126: All scene data cleared
+16:08:37.126: ------------------------------------------------
+16:08:37.295: [obs-backgroundremoval] plugin unloaded
+16:08:37.305: [obs-websocket] [obs_module_unload] Shutting down...
+16:08:37.305: Tried to call obs_frontend_remove_event_callback with no callbacks!
+16:08:37.305: [obs-websocket] [obs_module_unload] Finished shutting down.
+16:08:37.308: [Scripting] Total detached callbacks: 0
+16:08:37.308: Freeing OBS context data
+16:08:37.339: == Profiler Results =============================
+16:08:37.339: run_program_init: 10982.5 ms
+16:08:37.339:  ┣OBSApp::AppInit: 42.058 ms
+16:08:37.339:  ┃ ┗OBSApp::InitLocale: 18.953 ms
+16:08:37.339:  ┗OBSApp::OBSInit: 10377.2 ms
+16:08:37.339:    ┣obs_startup: 2.309 ms
+16:08:37.339:    ┗OBSBasic::OBSInit: 9658.98 ms
+16:08:37.339:      ┣OBSBasic::InitBasicConfig: 0.201 ms
+16:08:37.339:      ┣OBSBasic::ResetAudio: 0.111 ms
+16:08:37.339:      ┣OBSBasic::ResetVideo: 561.851 ms
+16:08:37.339:      ┃ ┗obs_init_graphics: 561.641 ms
+16:08:37.339:      ┃   ┗shader compilation: 381.506 ms
+16:08:37.339:      ┣OBSBasic::InitOBSCallbacks: 0.006 ms
+16:08:37.339:      ┣OBSBasic::InitHotkeys: 0.014 ms
+16:08:37.339:      ┣obs_load_all_modules2: 4972.52 ms
+16:08:37.339:      ┃ ┣obs_init_module(aja-output-ui): 0.182 ms
+16:08:37.339:      ┃ ┣obs_init_module(aja): 0.298 ms
+16:08:37.339:      ┃ ┣obs_init_module(coreaudio-encoder): 0.001 ms
+16:08:37.339:      ┃ ┣obs_init_module(decklink-captions): 0 ms
+16:08:37.339:      ┃ ┣obs_init_module(decklink-output-ui): 0.019 ms
+16:08:37.339:      ┃ ┣obs_init_module(decklink): 0.135 ms
+16:08:37.339:      ┃ ┣obs_init_module(frontend-tools): 5.093 ms
+16:08:37.339:      ┃ ┣obs_init_module(image-source): 0.012 ms
+16:08:37.339:      ┃ ┣obs_init_module(mac-avcapture-legacy): 436.548 ms
+16:08:37.339:      ┃ ┣obs_init_module(mac-avcapture): 0.004 ms
+16:08:37.339:      ┃ ┣obs_init_module(mac-capture): 0.022 ms
+16:08:37.339:      ┃ ┣obs_init_module(mac-syphon): 0.004 ms
+16:08:37.339:      ┃ ┣obs_init_module(mac-videotoolbox): 0.014 ms
+16:08:37.339:      ┃ ┣obs_init_module(mac-virtualcam): 0.115 ms
+16:08:37.339:      ┃ ┣obs_init_module(obs-browser): 1883.57 ms
+16:08:37.339:      ┃ ┣obs_init_module(obs-ffmpeg): 0.332 ms
+16:08:37.339:      ┃ ┣obs_init_module(obs-filters): 0.013 ms
+16:08:37.339:      ┃ ┣obs_init_module(obs-outputs): 0.004 ms
+16:08:37.339:      ┃ ┣obs_init_module(obs-transitions): 0.006 ms
+16:08:37.339:      ┃ ┣obs_init_module(obs-vst): 0.003 ms
+16:08:37.339:      ┃ ┣obs_init_module(obs-webrtc): 0.023 ms
+16:08:37.339:      ┃ ┣obs_init_module(obs-websocket): 5.577 ms
+16:08:37.339:      ┃ ┣obs_init_module(obs-x264): 0.002 ms
+16:08:37.339:      ┃ ┣obs_init_module(rtmp-services): 20.073 ms
+16:08:37.339:      ┃ ┣obs_init_module(text-freetype2): 0.1 ms
+16:08:37.339:      ┃ ┣obs_init_module(vlc-video): 15.197 ms
+16:08:37.339:      ┃ ┗obs_init_module(obs-backgroundremoval): 5.311 ms
+16:08:37.339:      ┣OBSBasic::InitService: 8.918 ms
+16:08:37.339:      ┣OBSBasic::ResetOutputs: 1914.45 ms
+16:08:37.339:      ┣OBSBasic::CreateHotkeys: 0.043 ms
+16:08:37.339:      ┣OBSBasic::InitPrimitives: 0.049 ms
+16:08:37.339:      ┗OBSBasic::Load: 1679.43 ms
+16:08:37.339: obs_hotkey_thread(25 ms): min=0 ms, median=0 ms, max=73.601 ms, 99th percentile=0.001 ms, 99.9995% below 25 ms
+16:08:37.339: audio_thread(Audio): min=0.002 ms, median=0.018 ms, max=138.924 ms, 99th percentile=6.801 ms
+16:08:37.339: obs_graphics_thread(33.3333 ms): min=0.084 ms, median=5.937 ms, max=1470.45 ms, 99th percentile=14.094 ms, 99.8869% below 33.333 ms
+16:08:37.339:  ┣tick_sources: min=0 ms, median=0.02 ms, max=1453.44 ms, 99th percentile=0.141 ms
+16:08:37.339:  ┣output_frame: min=0.076 ms, median=4.023 ms, max=79.121 ms, 99th percentile=6.671 ms
+16:08:37.339:  ┃ ┣gs_context(video->graphics): min=0.076 ms, median=3.819 ms, max=75.084 ms, 99th percentile=6.407 ms
+16:08:37.339:  ┃ ┃ ┣render_video: min=0.019 ms, median=1.531 ms, max=68.165 ms, 99th percentile=3.547 ms
+16:08:37.339:  ┃ ┃ ┃ ┣render_main_texture: min=0.017 ms, median=0.84 ms, max=28.312 ms, 99th percentile=2.238 ms
+16:08:37.339:  ┃ ┃ ┃ ┣render_convert_texture: min=0.026 ms, median=0.093 ms, max=16.371 ms, 99th percentile=0.333 ms
+16:08:37.339:  ┃ ┃ ┃ ┗stage_output_texture: min=0.144 ms, median=0.551 ms, max=63.006 ms, 99th percentile=1.79 ms
+16:08:37.339:  ┃ ┃ ┣gs_flush: min=0.005 ms, median=0.026 ms, max=24.913 ms, 99th percentile=0.113 ms
+16:08:37.339:  ┃ ┃ ┗download_frame: min=0 ms, median=2.219 ms, max=73.19 ms, 99th percentile=4.173 ms
+16:08:37.339:  ┃ ┗output_video_data: min=0 ms, median=0.182 ms, max=25.833 ms, 99th percentile=0.575 ms
+16:08:37.339:  ┗render_displays: min=0 ms, median=1.613 ms, max=330.828 ms, 99th percentile=9.456 ms
+16:08:37.339: video_thread(video): min=0.087 ms, median=0.321 ms, max=609.91 ms, 99th percentile=5.001 ms
+16:08:37.339: =================================================
+16:08:37.339: == Profiler Time Between Calls ==================
+16:08:37.339: obs_hotkey_thread(25 ms): min=25.014 ms, median=29.993 ms, max=231.163 ms, 1.39387% within ±2% of 25 ms (0% lower, 98.6061% higher)
+16:08:37.339: obs_graphics_thread(33.3333 ms): min=3.328 ms, median=33.334 ms, max=1470.45 ms, 71.2948% within ±2% of 33.333 ms (14.4844% lower, 14.2208% higher)
+16:08:37.339: =================================================
+16:08:37.451: Number of memory leaks: 1

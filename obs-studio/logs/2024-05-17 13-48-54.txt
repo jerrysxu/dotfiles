@@ -1,0 +1,130 @@
+13:48:54.717: [macOS] Permission for audio device access granted.
+13:48:54.722: [macOS] Permission for video device access granted.
+13:48:54.728: [macOS] Permission for accessibility granted.
+13:48:54.737: [macOS] Permission for screen capture granted.
+13:48:54.737: CPU Name: Apple M1 Pro
+13:48:54.737: Physical Cores: 10, Logical Cores: 10
+13:48:54.737: Physical Memory: 32768MB Total
+13:48:54.737: Model Identifier: MacBookPro18,1
+13:48:54.737: OS Name: macOS
+13:48:54.747: OS Version: Version 14.4.1 (Build 23E224)
+13:48:54.747: Rosetta translation used: false
+13:48:54.747: Kernel Version: 23.4.0
+13:48:54.750: hotkeys-cocoa: Using layout 'com.apple.keylayout.US'
+13:48:54.750: Current Date/Time: 2024-05-17, 13:48:54
+13:48:54.750: Browser Hardware Acceleration: true
+13:48:54.750: Qt Version: 6.6.2 (runtime), 6.6.2 (compiled)
+13:48:54.750: Portable mode: false
+13:48:55.073: OBS 30.1.2 (mac)
+13:48:55.073: ---------------------------------
+13:48:55.074: ---------------------------------
+13:48:55.074: audio settings reset:
+13:48:55.074: 	samples per sec: 48000
+13:48:55.074: 	speakers:        2
+13:48:55.074: 	max buffering:   960 milliseconds
+13:48:55.074: 	buffering type:  dynamically increasing
+13:48:55.082: ---------------------------------
+13:48:55.082: Initializing OpenGL...
+13:48:55.230: Loading up OpenGL on adapter Apple Apple M1 Pro
+13:48:55.230: OpenGL loaded successfully, version 4.1 Metal - 88, shading language 4.10
+13:48:55.610: ---------------------------------
+13:48:55.610: video settings reset:
+13:48:55.610: 	base resolution:   1920x1080
+13:48:55.610: 	output resolution: 1920x1080
+13:48:55.610: 	downscale filter:  Bicubic
+13:48:55.610: 	fps:               30/1
+13:48:55.610: 	format:            NV12
+13:48:55.610: 	YUV mode:          Rec. 709/Partial
+13:48:55.610: NV12 texture support not available
+13:48:55.610: P010 texture support not available
+13:48:55.610: Audio monitoring device:
+13:48:55.610: 	name: Default
+13:48:55.610: 	id: default
+13:48:55.610: ---------------------------------
+13:48:55.646: No AJA devices found, skipping loading AJA UI plugin
+13:48:55.646: Failed to initialize module 'aja-output-ui'
+13:48:55.662: No AJA devices found, skipping loading AJA plugin
+13:48:55.662: Failed to initialize module 'aja'
+13:48:55.678: Failed to load 'en-US' text for module: 'decklink-captions'
+13:48:55.685: Failed to load 'en-US' text for module: 'decklink-output-ui'
+13:48:55.715: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+13:48:55.715: Failed to initialize module 'decklink'
+13:48:56.461: [obs-browser]: Version 2.23.4
+13:48:56.461: [obs-browser]: CEF Version 103.0.5060.134 (runtime), 103.61.26+g3630089+chromium-103.0.5060.134 (compiled)
+13:48:56.642: [obs-websocket] [obs_module_load] you can haz websockets (Version: 5.4.2 | RPC Version: 1)
+13:48:56.642: [obs-websocket] [obs_module_load] Qt version (compile-time): 6.6.2 | Qt version (run-time): 6.6.2
+13:48:56.642: [obs-websocket] [obs_module_load] Linked ASIO Version: 102900
+13:48:56.647: [obs-websocket] [obs_module_load] Module loaded.
+13:48:56.739: [vlc-video]: VLC 3.0.20 Vetinari found, VLC video source enabled
+13:48:57.022: [obs-backgroundremoval] Plugin loaded successfully (version 1.1.12)
+13:48:57.028: ---------------------------------
+13:48:57.028:   Loaded Modules:
+13:48:57.028:     obs-backgroundremoval
+13:48:57.028:     vlc-video
+13:48:57.028:     text-freetype2
+13:48:57.028:     rtmp-services
+13:48:57.028:     obs-x264
+13:48:57.028:     obs-websocket
+13:48:57.028:     obs-webrtc
+13:48:57.028:     obs-vst
+13:48:57.028:     obs-transitions
+13:48:57.028:     obs-outputs
+13:48:57.028:     obs-filters
+13:48:57.028:     obs-ffmpeg
+13:48:57.028:     obs-browser
+13:48:57.028:     mac-virtualcam
+13:48:57.028:     mac-videotoolbox
+13:48:57.028:     mac-syphon
+13:48:57.028:     mac-capture
+13:48:57.028:     mac-avcapture
+13:48:57.028:     mac-avcapture-legacy
+13:48:57.028:     image-source
+13:48:57.028:     frontend-tools
+13:48:57.028:     decklink-output-ui
+13:48:57.028:     decklink-captions
+13:48:57.028:     coreaudio-encoder
+13:48:57.028: ---------------------------------
+13:48:57.028: [VideoToolbox encoder]: Added VideoToolbox encoders
+13:48:57.029: QWidget::setTabOrder: 'first' and 'second' must be in the same window
+13:48:57.029: ==== Startup complete ===============================================
+13:48:57.123: All scene data cleared
+13:48:57.123: ------------------------------------------------
+13:48:57.355: [Media Source 'Code']: settings:
+13:48:57.355: 	input:                   /Users/jerryxu/Downloads/Backgrounds/Code_flythough_loop_01_Videvo.mov
+13:48:57.355: 	input_format:            (null)
+13:48:57.355: 	speed:                   100
+13:48:57.355: 	is_looping:              yes
+13:48:57.355: 	is_linear_alpha:         no
+13:48:57.355: 	is_hw_decoding:          yes
+13:48:57.355: 	is_clear_on_media_end:   yes
+13:48:57.355: 	restart_on_activate:     yes
+13:48:57.355: 	close_when_inactive:     no
+13:48:57.355: 	full_decode:             no
+13:48:57.355: 	ffmpeg_options:          
+13:48:57.694: Video Capture Device: Selected device 'C922 Pro Stream Webcam'
+13:48:57.705: Video Capture Device: Using preset 1920x1080
+13:48:58.652: Switched to scene 'Scene'
+13:48:58.652: ------------------------------------------------
+13:48:58.652: Loaded scenes:
+13:48:58.652: - scene 'Scene':
+13:48:58.652:     - source: 'Code' (ffmpeg_source)
+13:48:58.652:     - source: 'FB 22' (image_source)
+13:48:58.652:     - source: 'Yale' (image_source)
+13:48:58.652:     - source: 'BOS' (image_source)
+13:48:58.652:     - source: 'Cheers' (image_source)
+13:48:58.652:     - source: 'Dome' (image_source)
+13:48:58.652:     - source: 'Meta' (image_source)
+13:48:58.652:     - source: 'Video Capture Device' (av_capture_input_v2)
+13:48:58.652:         - filter: 'Chroma Key' (chroma_key_filter_v2)
+13:48:58.652: ------------------------------------------------
+13:48:59.410: [obs-backgroundremoval] Latest release is 1.1.13
+13:48:59.470: [mac-virtualcam] macOS Camera Extension activated successfully.
+14:49:18.710:   OpenType support missing for "Open Sans", script 11
+14:49:18.711:   OpenType support missing for ".AppleSystemUIFont", script 11
+14:49:19.064: Populating font family aliases took 184 ms. Replace uses of missing font family "MS Shell Dlg" with one that exists to avoid this cost. 
+14:49:19.068:   OpenType support missing for "Open Sans", script 12
+14:49:19.068:   OpenType support missing for ".AppleSystemUIFont", script 12
+14:49:19.070:   OpenType support missing for "Open Sans", script 16
+14:49:19.070:   OpenType support missing for ".AppleSystemUIFont", script 16
+14:49:19.071:   OpenType support missing for "Open Sans", script 20
+14:49:19.072:   OpenType support missing for ".AppleSystemUIFont", script 20
