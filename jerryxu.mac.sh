@@ -9,10 +9,6 @@ if [ -d /opt/homebrew/bin ]; then
   export PATH=/opt/homebrew/bin:$PATH
 fi
 
-if [ -d /opt/facebook/bin ]; then
-  export PATH=/opt/facebook/bin:$PATH
-fi
-
 if [ -d "/Users/jerryxu/Library/Application Support/JetBrains/Toolbox/scripts" ]; then
   export PATH="/Users/jerryxu/Library/Application Support/JetBrains/Toolbox/scripts":$PATH
 fi
@@ -28,25 +24,25 @@ alias pc="/Users/jerryxu/src/opensource/m1ddc/m1ddc display 2 set input 15"
 alias fbat="fzf --preview \"bat --color=always --style=numbers --line-range=:500 {}\""
 
 ###############################################################################
-# java version
-export JAVA_HOME=`/usr/libexec/java_home -v 11`
+# java version Java SE 8, 11, 17 and 21 are LTS releases
+# export JAVA_HOME=`/usr/libexec/java_home -v 11`
 
 # added by Anaconda 2.1.0 installer
 function ana {
-  # >>> conda initialize >>>
-  # !! Contents within this block are managed by 'conda init' !!
-  __conda_setup="$('/Users/jerryxu/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-      eval "$__conda_setup"
-  else
-      if [ -f "/Users/jerryxu/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-          . "/Users/jerryxu/opt/anaconda3/etc/profile.d/conda.sh"
-      else
-          export PATH="/Users/jerryxu/opt/anaconda3/bin:$PATH"
-      fi
-  fi
-  unset __conda_setup
-  # <<< conda initialize <<<
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 }
 
 function xtitle () {
@@ -63,5 +59,3 @@ function lfcd() {
     [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
   fi
 }
-
-neofetch --ascii ~/tools/dotfiles/vendetta.ascii.60.txt
