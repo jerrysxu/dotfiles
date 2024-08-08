@@ -19,8 +19,8 @@ alias ls="lsd"
 alias ll="lsd -ltra"
 alias cat="bat"
 alias ve="source ./venv/bin/activate"
-alias mac="/Users/jerryxu/src/opensource/m1ddc/m1ddc display 2 set input 17"
-alias pc="/Users/jerryxu/src/opensource/m1ddc/m1ddc display 2 set input 15"
+alias mac="/tools/dotfiles/bin/m1ddc display 2 set input 17"
+alias pc="/tools/dotfiles/bin/m1ddc display 2 set input 15"
 alias fbat="fzf --preview \"bat --color=always --style=numbers --line-range=:500 {}\""
 
 ###############################################################################
